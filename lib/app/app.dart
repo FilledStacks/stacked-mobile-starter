@@ -4,15 +4,23 @@ import 'package:stacked_mobile_starter/ui/views/home/home_view.dart';
 import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 // @stacked-import
 
 @StackedApp(
   routes: [
-    MaterialRoute(page: HomeView),
-    MaterialRoute(page: StartupView),
+    AdaptiveRoute(
+      page: StartupView,
+      initial: true,
+    ),
+    AdaptiveRoute(page: HomeView),
     // @stacked-route
   ],
   dependencies: [
+    Singleton(
+      classType: ThemeService,
+      resolveUsing: ThemeService.getInstance,
+    ),
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
