@@ -33,10 +33,23 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                 },
                 itemBuilder: (context, index) {
                   final item = viewModel.onboardItems.elementAt(index);
-                  return Image.asset(
-                    item.image ?? '',
-                    height: 314,
-                    fit: BoxFit.fill,
+                  final isDarkMode = viewModel.isDarkMode;
+                  return Builder(
+                    builder: (context) {
+                      if (isDarkMode) {
+                        return Image.asset(
+                          item.imageDark ?? '',
+                          height: 314,
+                          fit: BoxFit.fill,
+                        );
+                      }
+
+                      return Image.asset(
+                        item.imageLight ?? '',
+                        height: 314,
+                        fit: BoxFit.fill,
+                      );
+                    },
                   );
                 },
               ),
