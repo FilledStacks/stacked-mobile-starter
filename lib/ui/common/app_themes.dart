@@ -15,7 +15,10 @@ class AppThemes {
         textColor: Colors.black,
         onboardingSubtitlesColor: AppColors.kcSlate700,
         primaryButtonColor: Colors.black,
+        primaryButtonTextColor: Colors.white,
         iconColor: Colors.black,
+        onboardActiveIndicator: AppColors.kcSlate900,
+        onboardInactiveIndicator: AppColors.kcSlate300,
       ),
     ],
   );
@@ -31,7 +34,10 @@ class AppThemes {
         textColor: Colors.white,
         onboardingSubtitlesColor: AppColors.kcSlate400,
         primaryButtonColor: Colors.white,
+        primaryButtonTextColor: Colors.black,
         iconColor: Colors.white,
+        onboardActiveIndicator: Colors.white,
+        onboardInactiveIndicator: AppColors.kcSlate500,
       ),
     ],
   );

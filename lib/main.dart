@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:stacked_mobile_starter/app/app.bottomsheets.dart';
 import 'package:stacked_mobile_starter/app/app.dialogs.dart';
@@ -13,6 +14,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   await ThemeManager.initialise();
+  _initSystemUI();
   setupDialogUi();
   setupBottomSheetUi();
   runApp(const MainApp());
@@ -47,4 +49,22 @@ class MainApp extends StatelessWidget {
       },
     );
   }
+}
+
+void _initSystemUI() {
+  // Configure preferred orientation
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  // Configure status bar appearance
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    // Only honored in Android. Ensure dark icons/texts on the status bar along
+    // with transparent status bar background
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark,
+    // Only honored in iOS. Ensure dark icons and texts on the status bar
+    statusBarBrightness: Brightness.light,
+  ));
 }

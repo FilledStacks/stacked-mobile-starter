@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.0.3 <4.0.0'
 
 dependencies:
+  dots_indicator: ^3.0.0
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -26,6 +27,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/png/
   fonts:
     - family: Inter
       fonts:
