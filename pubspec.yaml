@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.1
   stacked: ^3.4.0
   stacked_services: ^1.1.0
   stacked_themes: ^0.3.13
@@ -36,3 +39,5 @@ flutter:
           weight: 700
         - asset: assets/fonts/Inter-ExtraBold.ttf
           weight: 800
+flutter_intl:
+  enabled: true
