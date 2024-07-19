@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/app_colors.dart';
+import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
 import 'package:stacked_mobile_starter/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -86,12 +88,10 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Text(
-                  'Got it',
-                  style: TextStyle(
+                child: Text(
+                  S.of(context).ksGotIt,
+                  style: AppTextStyles.ktsP.copyWith(
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
                   ),
                 ),
               ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/extensions/context_extension.dart';
+import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/app_colors.dart';
+import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
 import 'package:stacked_mobile_starter/ui/common/ui_helpers.dart';
 
 import 'home_viewmodel.dart';
@@ -26,11 +29,20 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceLarge,
                 Column(
                   children: [
-                    const Text(
-                      'Hello, STACKED!',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.w900,
+                    RichText(
+                      text: TextSpan(
+                        text: S.of(context).ksHello,
+                        style: AppTextStyles.ktsH2.copyWith(
+                          color: context.palette.textColor,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: ', STACKED!',
+                            style: AppTextStyles.ktsH2.copyWith(
+                              color: context.palette.textColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     verticalSpaceMedium,
@@ -50,9 +62,9 @@ class HomeView extends StackedView<HomeViewModel> {
                     MaterialButton(
                       color: kcDarkGreyColor,
                       onPressed: viewModel.showDialog,
-                      child: const Text(
-                        'Show Dialog',
-                        style: TextStyle(
+                      child: Text(
+                        S.of(context).ksShowDialog,
+                        style: const TextStyle(
                           color: Colors.white,
                         ),
                       ),
@@ -60,9 +72,9 @@ class HomeView extends StackedView<HomeViewModel> {
                     MaterialButton(
                       color: kcDarkGreyColor,
                       onPressed: viewModel.showBottomSheet,
-                      child: const Text(
-                        'Show Bottom Sheet',
-                        style: TextStyle(
+                      child: Text(
+                        S.of(context).ksShowBottomSheet,
+                        style: const TextStyle(
                           color: Colors.white,
                         ),
                       ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/extensions/context_extension.dart';
+import 'package:stacked_mobile_starter/generated/l10n.dart';
+import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
 import 'package:stacked_mobile_starter/ui/common/ui_helpers.dart';
 
 import 'startup_viewmodel.dart';
@@ -14,21 +17,38 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               'STACKED',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+              style: AppTextStyles.ktsH1.copyWith(
+                color: context.palette.textColor,
+              ),
             ),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Loading ...', style: TextStyle(fontSize: 16)),
+                RichText(
+                  text: TextSpan(
+                    text: S.of(context).ksLoading,
+                    style: AppTextStyles.ktsTableHead.copyWith(
+                      color: context.palette.textColor,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: ' ...',
+                        style: AppTextStyles.ktsTableHead.copyWith(
+                          color: context.palette.textColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 horizontalSpaceSmall,
-                SizedBox(
+                const SizedBox(
                   width: 16,
                   height: 16,
                   child: CircularProgressIndicator(

@@ -1,0 +1,19 @@
+{
+    "@@locale": "en",
+    "ksLoading": "Loading",
+    "ksHomeBottomSheetTitle": "Build Great Apps!",
+    "ksHomeBottomSheetDescription": "Stacked is built to help you build better apps. Give us a chance and we'll prove it to you. Check out stacked.filledstacks.com to learn more",
+    "ksHello": "Hello",
+    "ksShowDialog": "Show Dialog",
+    "ksShowBottomSheet": "Show Bottom Sheet",
+    "ksGotIt": "Got it",
+    "ksCounterLabel": "Counter is: {count}",
+    "@ksCounterLabel": {
+        "placeholders": {
+          "count": {
+            "type": "int"
+          }
+        }
+      },
+    "ksRocks": "Rocks"
+}
