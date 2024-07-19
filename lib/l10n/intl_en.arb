@@ -15,5 +15,9 @@
           }
         }
       },
-    "ksRocks": "Rocks"
+    "ksRocks": "Rocks",
+    "ksOnboardingTitle": "Join the Community",
+    "ksOnboardingSubtitle": "Connect with others, share your journey, and get inspired by a community of like-minded individuals.",
+    "ksLogin": "Login",
+    "ksGetStarted": "Get Started"
 }

@@ -7,18 +7,23 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i3;
+import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i4;
+import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart'
+    as _i3;
 import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart'
     as _i2;
-import 'package:stacked_services/stacked_services.dart' as _i4;
+import 'package:stacked_services/stacked_services.dart' as _i5;
 
 class Routes {
   static const startupView = '/';
+
+  static const onboardingView = '/onboarding-view';
 
   static const homeView = '/home-view';
 
   static const all = <String>{
     startupView,
+    onboardingView,
     homeView,
   };
 }
@@ -30,8 +35,12 @@ class StackedRouter extends _i1.RouterBase {
       page: _i2.StartupView,
     ),
     _i1.RouteDef(
+      Routes.onboardingView,
+      page: _i3.OnboardingView,
+    ),
+    _i1.RouteDef(
       Routes.homeView,
-      page: _i3.HomeView,
+      page: _i4.HomeView,
     ),
   ];
 
@@ -42,9 +51,15 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i3.HomeView: (data) {
+    _i3.OnboardingView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i3.HomeView(),
+        builder: (context) => const _i3.OnboardingView(),
+        settings: data,
+      );
+    },
+    _i4.HomeView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i4.HomeView(),
         settings: data,
       );
     },
@@ -57,7 +72,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i4.NavigationService {
+extension NavigatorStateExtension on _i5.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -66,6 +81,20 @@ extension NavigatorStateExtension on _i4.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.startupView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToOnboardingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.onboardingView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -94,6 +123,20 @@ extension NavigatorStateExtension on _i4.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.startupView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithOnboardingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.onboardingView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

@@ -5,6 +5,7 @@ import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
+import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -13,8 +14,9 @@ import 'package:stacked_themes/stacked_themes.dart';
       page: StartupView,
       initial: true,
     ),
+    AdaptiveRoute(page: OnboardingView),
     AdaptiveRoute(page: HomeView),
-    // @stacked-route
+// @stacked-route
   ],
   dependencies: [
     Singleton(
