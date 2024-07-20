@@ -34,5 +34,13 @@
     "ksDontHaveAnAccount": "Don’t have an account?",
     "ksCreateAccount": "Create Account",
     "ksPassword": "Password",
-    "ksForgotPassword": "Forgot Password?"
+    "ksForgotPassword": "Forgot Password?",
+    "ksOppsSorry": "Oops, Sorry",
+    "ksCountryNotFoundText": "We can’t find the country you’re looking for.",
+    "ksMobileSignupTitle": "Enter your mobile number",
+    "ksMobileSignupSubtitle": "We will send you a 6-digit code and we will need to verify it",
+    "ksPhoneInputHint": "Enter Mobile Number",
+    "ksContinue": "Continue",
+    "ksCountryTitle": "Countries",
+    "ksSearch": "Search"
 }

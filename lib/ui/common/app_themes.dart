@@ -10,6 +10,10 @@ class AppThemes {
     primaryColor: AppColors.kcSlate500,
     scaffoldBackgroundColor: Colors.white,
     fontFamily: 'Inter',
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
+    ),
     extensions: [
       Palette(
         textColor: Colors.black,
@@ -35,6 +39,10 @@ class AppThemes {
     primaryColor: AppColors.kcSlate500,
     scaffoldBackgroundColor: Colors.black,
     fontFamily: 'Inter',
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.black,
+      surfaceTintColor: Colors.black,
+    ),
     extensions: [
       Palette(
         textColor: Colors.white,

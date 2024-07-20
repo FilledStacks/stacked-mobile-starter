@@ -1,10 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/generated/l10n.dart';
-import 'package:stacked_mobile_starter/ui/common/app_colors.dart';
-import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
+import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
 import 'login_view.form.dart';
@@ -179,6 +179,8 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                   ),
                   TextSpan(
                     text: S.of(context).ksCreateAccount,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = viewModel.actionMoveToMobileSignup,
                     style: AppTextStyles.ktsDetail.copyWith(
                       color: context.palette.textColor,
                       decoration: TextDecoration.underline,

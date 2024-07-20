@@ -8,6 +8,9 @@ import 'package:stacked_themes/stacked_themes.dart';
 import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart';
 import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart';
 import 'package:stacked_mobile_starter/ui/views/login/login_view.dart';
+import 'package:stacked_mobile_starter/services/json_resource_service.dart';
+import 'package:stacked_mobile_starter/ui/bottom_sheets/countries/countries_sheet.dart';
+import 'package:stacked_mobile_starter/ui/views/mobile_signup/mobile_signup_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -20,6 +23,7 @@ import 'package:stacked_mobile_starter/ui/views/login/login_view.dart';
     AdaptiveRoute(page: LoginEmailView),
     AdaptiveRoute(page: LoginView),
     AdaptiveRoute(page: HomeView),
+    AdaptiveRoute(page: MobileSignupView),
 // @stacked-route
   ],
   dependencies: [
@@ -30,15 +34,18 @@ import 'package:stacked_mobile_starter/ui/views/login/login_view.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+    LazySingleton(classType: JsonResourceService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
-    // @stacked-bottom-sheet
+    StackedBottomsheet(classType: CountriesSheet),
+// @stacked-bottom-sheet
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),
     // @stacked-dialog
   ],
+  logger: StackedLogger(),
 )
 class App {}

@@ -3,8 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/generated/l10n.dart';
-import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
-import 'package:stacked_mobile_starter/ui/common/ui_helpers.dart';
+import 'package:stacked_mobile_starter/ui/common/common.dart';
 
 import 'startup_viewmodel.dart';
 
@@ -48,11 +47,11 @@ class StartupView extends StackedView<StartupViewModel> {
                   ),
                 ),
                 horizontalSpaceSmall,
-                const SizedBox(
+                SizedBox(
                   width: 16,
                   height: 16,
                   child: CircularProgressIndicator(
-                    color: Colors.black,
+                    color: context.palette.textColor,
                     strokeWidth: 6,
                   ),
                 )
