@@ -42,5 +42,8 @@
     "ksPhoneInputHint": "Enter Mobile Number",
     "ksContinue": "Continue",
     "ksCountryTitle": "Countries",
-    "ksSearch": "Search"
+    "ksSearch": "Search",
+    "ksVerifyMobileTitle": "Verify your number",
+    "ksVerifyMobileSubtitle": "We have sent a 6-digit code to your mobile number ending in **** 4879",
+    "ksResend": "Resend"
 }

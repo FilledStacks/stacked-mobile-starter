@@ -11,6 +11,7 @@ import 'package:stacked_mobile_starter/ui/views/login/login_view.dart';
 import 'package:stacked_mobile_starter/services/json_resource_service.dart';
 import 'package:stacked_mobile_starter/ui/bottom_sheets/countries/countries_sheet.dart';
 import 'package:stacked_mobile_starter/ui/views/mobile_signup/mobile_signup_view.dart';
+import 'package:stacked_mobile_starter/ui/views/verify_mobile/verify_mobile_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -22,8 +23,9 @@ import 'package:stacked_mobile_starter/ui/views/mobile_signup/mobile_signup_view
     AdaptiveRoute(page: OnboardingView),
     AdaptiveRoute(page: LoginEmailView),
     AdaptiveRoute(page: LoginView),
-    AdaptiveRoute(page: HomeView),
     AdaptiveRoute(page: MobileSignupView),
+    AdaptiveRoute(page: VerifyMobileView),
+    AdaptiveRoute(page: HomeView),
 // @stacked-route
   ],
   dependencies: [
