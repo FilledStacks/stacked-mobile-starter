@@ -32,5 +32,7 @@
     "ksContinueWithGoogle": "Continue with Google",
     "ksContinueWithFacebook": "Continue with Facebook",
     "ksDontHaveAnAccount": "Don’t have an account?",
-    "ksCreateAccount": "Create Account"
+    "ksCreateAccount": "Create Account",
+    "ksPassword": "Password",
+    "ksForgotPassword": "Forgot Password?"
 }
