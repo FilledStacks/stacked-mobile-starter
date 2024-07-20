@@ -9,6 +9,7 @@ const Color kcVeryLightGrey = Color(0xFFE3E3E3);
 const Color kcBackgroundColor = kcDarkGreyColor;
 
 class AppColors {
+  // Slate
   static Color kcSlate50 = const Color(0xffF8FAFC);
   static Color kcSlate100 = const Color(0xffF1F5F9);
   static Color kcSlate200 = const Color(0xffE2E8F0);
@@ -19,4 +20,9 @@ class AppColors {
   static Color kcSlate700 = const Color(0xff334155);
   static Color kcSlate800 = const Color(0xff1E293B);
   static Color kcSlate900 = const Color(0xff0F172A);
+
+  // Zinc
+  static Color kcZinc500 = const Color(0xff71717A);
+  static Color kcZinc700 = const Color(0xff3F3F46);
+  static Color kcZinc900 = const Color(0xff18181B);
 }

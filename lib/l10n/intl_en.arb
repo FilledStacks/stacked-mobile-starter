@@ -19,5 +19,18 @@
     "ksOnboardingTitle": "Join the Community",
     "ksOnboardingSubtitle": "Connect with others, share your journey, and get inspired by a community of like-minded individuals.",
     "ksLogin": "Login",
-    "ksGetStarted": "Get Started"
+    "ksGetStarted": "Get Started",
+    "ksLoginSubtitle": "Enter your email to login",
+    "ksEmail": "Email",
+    "ksTermsFirstPart": "By continuing, you agree to our",
+    "ksTermsOfService": "Terms of Service",
+    "ksAnd": "and",
+    "ksPrivacyPolicy": "Privacy Policy",
+    "ksContinueWithEmail": "Continue with Email",
+    "ksOrContinueWith": "OR CONTINUE WITH",
+    "ksContinueWithApple": "Continue with Apple",
+    "ksContinueWithGoogle": "Continue with Google",
+    "ksContinueWithFacebook": "Continue with Facebook",
+    "ksDontHaveAnAccount": "Don’t have an account?",
+    "ksCreateAccount": "Create Account"
 }

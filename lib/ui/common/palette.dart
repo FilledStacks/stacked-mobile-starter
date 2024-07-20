@@ -8,6 +8,12 @@ class Palette extends ThemeExtension<Palette> {
   final Color iconColor;
   final Color onboardActiveIndicator;
   final Color onboardInactiveIndicator;
+  final Color inputFieldFilledColor;
+  final Color inputFieldBorderColor;
+  final Color inputFieldHintColor;
+  final Color inputFieldContentColor;
+  final Color subTextColor;
+  final Color detailColor;
 
   Palette({
     required this.textColor,
@@ -17,6 +23,12 @@ class Palette extends ThemeExtension<Palette> {
     required this.iconColor,
     required this.onboardActiveIndicator,
     required this.onboardInactiveIndicator,
+    required this.inputFieldBorderColor,
+    required this.inputFieldFilledColor,
+    required this.inputFieldContentColor,
+    required this.inputFieldHintColor,
+    required this.subTextColor,
+    required this.detailColor,
   });
 
   @override
@@ -28,6 +40,12 @@ class Palette extends ThemeExtension<Palette> {
     Color? iconColor,
     Color? onboardActiveIndicator,
     Color? onboardInactiveIndicator,
+    Color? inputFieldFilledColor,
+    Color? inputFieldBorderColor,
+    Color? inputFieldHintColor,
+    Color? inputFieldContentColor,
+    Color? subTextColor,
+    Color? detailColor,
   }) {
     return Palette(
       textColor: textColor ?? this.textColor,
@@ -41,6 +59,15 @@ class Palette extends ThemeExtension<Palette> {
           onboardActiveIndicator ?? this.onboardActiveIndicator,
       onboardInactiveIndicator:
           onboardInactiveIndicator ?? this.onboardInactiveIndicator,
+      inputFieldFilledColor:
+          inputFieldFilledColor ?? this.inputFieldFilledColor,
+      inputFieldBorderColor:
+          inputFieldBorderColor ?? this.inputFieldBorderColor,
+      inputFieldContentColor:
+          inputFieldContentColor ?? this.inputFieldContentColor,
+      inputFieldHintColor: inputFieldHintColor ?? this.inputFieldHintColor,
+      subTextColor: subTextColor ?? this.subTextColor,
+      detailColor: detailColor ?? this.detailColor,
     );
   }
 
@@ -65,6 +92,16 @@ class Palette extends ThemeExtension<Palette> {
           Color.lerp(onboardActiveIndicator, other.onboardActiveIndicator, t)!,
       onboardInactiveIndicator: Color.lerp(
           onboardInactiveIndicator, other.onboardInactiveIndicator, t)!,
+      inputFieldFilledColor:
+          Color.lerp(inputFieldFilledColor, other.inputFieldFilledColor, t)!,
+      inputFieldBorderColor:
+          Color.lerp(inputFieldBorderColor, other.inputFieldBorderColor, t)!,
+      inputFieldContentColor:
+          Color.lerp(inputFieldContentColor, other.inputFieldContentColor, t)!,
+      inputFieldHintColor:
+          Color.lerp(inputFieldHintColor, other.inputFieldHintColor, t)!,
+      subTextColor: Color.lerp(subTextColor, other.subTextColor, t)!,
+      detailColor: Color.lerp(detailColor, other.detailColor, t)!,
     );
   }
 }
