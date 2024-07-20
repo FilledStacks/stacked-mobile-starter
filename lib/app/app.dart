@@ -7,6 +7,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart';
 import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart';
+import 'package:stacked_mobile_starter/ui/views/login/login_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -17,6 +18,7 @@ import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dar
     ),
     AdaptiveRoute(page: OnboardingView),
     AdaptiveRoute(page: LoginEmailView),
+    AdaptiveRoute(page: LoginView),
     AdaptiveRoute(page: HomeView),
 // @stacked-route
   ],
