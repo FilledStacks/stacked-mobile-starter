@@ -36,6 +36,11 @@ class AppTextStyles {
     fontSize: 14,
   );
 
+  static TextStyle ktsDetail = const TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 12,
+  );
+
   static TextStyle ktsLead = const TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 20,

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
+import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/data_models/onboard_data_model.dart';
 import 'package:stacked_mobile_starter/generated/l10n.dart';
+import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
 class OnboardingViewModel extends IndexTrackingViewModel {
   final _themeService = locator<ThemeService>();
+  final _navigationService = locator<NavigationService>();
+
   late OnboardDataModel onboardItem;
   final pageController = PageController();
   late bool isDarkMode;
@@ -41,7 +45,9 @@ class OnboardingViewModel extends IndexTrackingViewModel {
     rebuildUi();
   }
 
-  void actionMoveToLogin() {}
+  void actionMoveToLogin() {
+    _navigationService.navigateToLoginEmailView();
+  }
 
   void actionMoveToGetStarted() {}
 }

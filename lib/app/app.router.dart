@@ -7,23 +7,28 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i4;
+import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i5;
+import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart'
+    as _i4;
 import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart'
     as _i3;
 import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart'
     as _i2;
-import 'package:stacked_services/stacked_services.dart' as _i5;
+import 'package:stacked_services/stacked_services.dart' as _i6;
 
 class Routes {
   static const startupView = '/';
 
   static const onboardingView = '/onboarding-view';
 
+  static const loginEmailView = '/login-email-view';
+
   static const homeView = '/home-view';
 
   static const all = <String>{
     startupView,
     onboardingView,
+    loginEmailView,
     homeView,
   };
 }
@@ -39,8 +44,12 @@ class StackedRouter extends _i1.RouterBase {
       page: _i3.OnboardingView,
     ),
     _i1.RouteDef(
+      Routes.loginEmailView,
+      page: _i4.LoginEmailView,
+    ),
+    _i1.RouteDef(
       Routes.homeView,
-      page: _i4.HomeView,
+      page: _i5.HomeView,
     ),
   ];
 
@@ -57,9 +66,15 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i4.HomeView: (data) {
+    _i4.LoginEmailView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i4.HomeView(),
+        builder: (context) => const _i4.LoginEmailView(),
+        settings: data,
+      );
+    },
+    _i5.HomeView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i5.HomeView(),
         settings: data,
       );
     },
@@ -72,7 +87,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i5.NavigationService {
+extension NavigatorStateExtension on _i6.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -95,6 +110,20 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.onboardingView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToLoginEmailView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.loginEmailView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -137,6 +166,20 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.onboardingView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithLoginEmailView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.loginEmailView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
