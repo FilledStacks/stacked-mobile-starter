@@ -13,6 +13,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.18.1
+  pinput: ^5.0.0
   stacked: ^3.4.0
   stacked_services: ^1.1.0
   stacked_themes: ^0.3.13
