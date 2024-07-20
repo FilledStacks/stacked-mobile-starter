@@ -49,5 +49,7 @@ class OnboardingViewModel extends IndexTrackingViewModel {
     _navigationService.navigateToLoginEmailView();
   }
 
-  void actionMoveToGetStarted() {}
+  void actionMoveToGetStarted() {
+    _navigationService.navigateToMobileSignupView();
+  }
 }

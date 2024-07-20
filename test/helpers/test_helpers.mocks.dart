@@ -9,6 +9,9 @@ import 'dart:ui' as _i6;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
+import 'package:stacked_mobile_starter/data_models/data_models.dart' as _i8;
+import 'package:stacked_mobile_starter/services/json_resource_service.dart'
+    as _i7;
 import 'package:stacked_services/stacked_services.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -669,4 +672,22 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
         ),
         returnValueForMissingStub: null,
       );
+}
+
+/// A class which mocks [JsonResourceService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockJsonResourceService extends _i1.Mock
+    implements _i7.JsonResourceService {
+  @override
+  _i5.Future<List<_i8.CountryInfoDataModel>?> loadCountries() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #loadCountries,
+          [],
+        ),
+        returnValue: _i5.Future<List<_i8.CountryInfoDataModel>?>.value(),
+        returnValueForMissingStub:
+            _i5.Future<List<_i8.CountryInfoDataModel>?>.value(),
+      ) as _i5.Future<List<_i8.CountryInfoDataModel>?>);
 }

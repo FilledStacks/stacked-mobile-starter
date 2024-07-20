@@ -11,11 +11,13 @@ import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i6;
 import 'package:stacked_mobile_starter/ui/views/login/login_view.dart' as _i5;
 import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart'
     as _i4;
+import 'package:stacked_mobile_starter/ui/views/mobile_signup/mobile_signup_view.dart'
+    as _i7;
 import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart'
     as _i3;
 import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart'
     as _i2;
-import 'package:stacked_services/stacked_services.dart' as _i7;
+import 'package:stacked_services/stacked_services.dart' as _i8;
 
 class Routes {
   static const startupView = '/';
@@ -28,12 +30,15 @@ class Routes {
 
   static const homeView = '/home-view';
 
+  static const mobileSignupView = '/mobile-signup-view';
+
   static const all = <String>{
     startupView,
     onboardingView,
     loginEmailView,
     loginView,
     homeView,
+    mobileSignupView,
   };
 }
 
@@ -58,6 +63,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.homeView,
       page: _i6.HomeView,
+    ),
+    _i1.RouteDef(
+      Routes.mobileSignupView,
+      page: _i7.MobileSignupView,
     ),
   ];
 
@@ -92,6 +101,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i7.MobileSignupView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i7.MobileSignupView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -101,7 +116,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i7.NavigationService {
+extension NavigatorStateExtension on _i8.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -172,6 +187,20 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToMobileSignupView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.mobileSignupView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -236,6 +265,20 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.homeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithMobileSignupView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.mobileSignupView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
