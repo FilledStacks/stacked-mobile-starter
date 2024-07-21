@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
+import 'app_text_styles.dart';
 import 'palette.dart';
 
 class AppThemes {
@@ -13,6 +14,19 @@ class AppThemes {
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.white,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedLabelStyle: AppTextStyles.ktsActiveLabel,
+      unselectedLabelStyle: AppTextStyles.ktsInactiveLabel,
+      selectedItemColor: Colors.black,
+      unselectedItemColor: AppColors.kcSlate500,
+      selectedIconTheme: const IconThemeData(
+        color: Colors.black,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: AppColors.kcSlate500,
+      ),
     ),
     extensions: [
       Palette(
@@ -42,6 +56,19 @@ class AppThemes {
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.black,
       surfaceTintColor: Colors.black,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.kcNeutral900,
+      selectedLabelStyle: AppTextStyles.ktsActiveLabel,
+      unselectedLabelStyle: AppTextStyles.ktsInactiveLabel,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: AppColors.kcZinc500,
+      selectedIconTheme: const IconThemeData(
+        color: Colors.white,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: AppColors.kcZinc500,
+      ),
     ),
     extensions: [
       Palette(

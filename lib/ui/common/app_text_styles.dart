@@ -31,6 +31,11 @@ class AppTextStyles {
     fontSize: 18,
   );
 
+  static TextStyle ktsActiveLabel = const TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+  );
+
   static TextStyle ktsSmall = const TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 14,
@@ -60,5 +65,10 @@ class AppTextStyles {
   static TextStyle ktsSubtitle = const TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 14,
+  );
+
+  static TextStyle ktsInactiveLabel = const TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 10,
   );
 }

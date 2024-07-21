@@ -7,7 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i8;
+import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i9;
 import 'package:stacked_mobile_starter/ui/views/login/login_view.dart' as _i5;
 import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart'
     as _i4;
@@ -15,11 +15,17 @@ import 'package:stacked_mobile_starter/ui/views/mobile_signup/mobile_signup_view
     as _i6;
 import 'package:stacked_mobile_starter/ui/views/onboarding/onboarding_view.dart'
     as _i3;
+import 'package:stacked_mobile_starter/ui/views/profile/profile_view.dart'
+    as _i11;
+import 'package:stacked_mobile_starter/ui/views/search/search_view.dart'
+    as _i10;
 import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart'
     as _i2;
 import 'package:stacked_mobile_starter/ui/views/verify_mobile/verify_mobile_view.dart'
     as _i7;
-import 'package:stacked_services/stacked_services.dart' as _i9;
+import 'package:stacked_mobile_starter/ui/views/wrapper/wrapper_view.dart'
+    as _i8;
+import 'package:stacked_services/stacked_services.dart' as _i12;
 
 class Routes {
   static const startupView = '/';
@@ -34,7 +40,13 @@ class Routes {
 
   static const verifyMobileView = '/verify-mobile-view';
 
+  static const wrapperView = '/wrapper-view';
+
   static const homeView = '/home-view';
+
+  static const searchView = '/search-view';
+
+  static const profileView = '/profile-view';
 
   static const all = <String>{
     startupView,
@@ -43,7 +55,10 @@ class Routes {
     loginView,
     mobileSignupView,
     verifyMobileView,
+    wrapperView,
     homeView,
+    searchView,
+    profileView,
   };
 }
 
@@ -74,8 +89,20 @@ class StackedRouter extends _i1.RouterBase {
       page: _i7.VerifyMobileView,
     ),
     _i1.RouteDef(
+      Routes.wrapperView,
+      page: _i8.WrapperView,
+    ),
+    _i1.RouteDef(
       Routes.homeView,
-      page: _i8.HomeView,
+      page: _i9.HomeView,
+    ),
+    _i1.RouteDef(
+      Routes.searchView,
+      page: _i10.SearchView,
+    ),
+    _i1.RouteDef(
+      Routes.profileView,
+      page: _i11.ProfileView,
     ),
   ];
 
@@ -116,9 +143,27 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i8.HomeView: (data) {
+    _i8.WrapperView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i8.HomeView(),
+        builder: (context) => const _i8.WrapperView(),
+        settings: data,
+      );
+    },
+    _i9.HomeView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i9.HomeView(),
+        settings: data,
+      );
+    },
+    _i10.SearchView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i10.SearchView(),
+        settings: data,
+      );
+    },
+    _i11.ProfileView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i11.ProfileView(),
         settings: data,
       );
     },
@@ -131,7 +176,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i9.NavigationService {
+extension NavigatorStateExtension on _i12.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -216,6 +261,20 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToWrapperView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.wrapperView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -224,6 +283,34 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.homeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSearchView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.searchView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.profileView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -314,6 +401,20 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> replaceWithWrapperView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.wrapperView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -322,6 +423,34 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.homeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSearchView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.searchView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.profileView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
