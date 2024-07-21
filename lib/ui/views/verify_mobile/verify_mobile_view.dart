@@ -59,7 +59,11 @@ class VerifyMobileView extends StackedView<VerifyMobileViewModel>
             child: CustomPinField(
               controller: otpController,
               focusNode: otpFocusNode,
-              onChanged: viewModel.actionSubmit,
+              onChanged: (value) {
+                if (value.length == 6) {
+                  viewModel.actionSubmit(value);
+                }
+              },
             ),
           ),
           const SizedBox(
