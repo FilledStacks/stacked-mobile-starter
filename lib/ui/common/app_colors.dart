@@ -25,4 +25,7 @@ class AppColors {
   static Color kcZinc500 = const Color(0xff71717A);
   static Color kcZinc700 = const Color(0xff3F3F46);
   static Color kcZinc900 = const Color(0xff18181B);
+
+  // Neutral
+  static Color kcNeutral900 = const Color(0xff171717);
 }

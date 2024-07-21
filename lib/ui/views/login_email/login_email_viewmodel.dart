@@ -6,7 +6,9 @@ import 'package:stacked_services/stacked_services.dart';
 class LoginEmailViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
 
-  void actionLoginWithEmail() {}
+  void actionLoginWithEmail() {
+    _navigationService.clearStackAndShow(Routes.wrapperView);
+  }
 
   void actionLoginWithApple() {}
 

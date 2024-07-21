@@ -13,11 +13,7 @@ class OnboardingViewModel extends IndexTrackingViewModel {
 
   late OnboardDataModel onboardItem;
   final pageController = PageController();
-  late bool isDarkMode;
-
-  OnboardingViewModel() {
-    isDarkMode = _themeService.isDarkMode;
-  }
+  bool get isDarkMode => _themeService.isDarkMode;
 
   List<OnboardDataModel> onboardItems = [
     OnboardDataModel(

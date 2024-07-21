@@ -12,7 +12,9 @@ class LoginViewModel extends FormViewModel {
 
   void actionLoginWithApple() {}
 
-  void actionLogin() {}
+  void actionLogin() {
+    _navigationService.clearStackAndShow(Routes.wrapperView);
+  }
 
   void actionMoveToForgotPassword() {}
 
