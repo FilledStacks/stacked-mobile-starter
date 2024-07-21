@@ -64,7 +64,7 @@ class InputField extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
           borderSide: BorderSide(
-            color: context.palette.inputFieldBorderColor,
+            color: context.palette.textColor,
           ),
         ),
       ),
