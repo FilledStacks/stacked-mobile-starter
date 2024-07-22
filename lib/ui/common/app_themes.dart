@@ -28,6 +28,9 @@ class AppThemes {
         color: AppColors.kcSlate500,
       ),
     ),
+    dividerTheme: DividerThemeData(
+      color: AppColors.kcSlate200,
+    ),
     extensions: [
       Palette(
         textColor: Colors.black,
@@ -69,6 +72,9 @@ class AppThemes {
       unselectedIconTheme: IconThemeData(
         color: AppColors.kcZinc500,
       ),
+    ),
+    dividerTheme: DividerThemeData(
+      color: AppColors.kcZinc800,
     ),
     extensions: [
       Palette(

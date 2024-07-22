@@ -10,6 +10,8 @@ import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
 import 'package:stacked_mobile_starter/data_models/data_models.dart' as _i8;
+import 'package:stacked_mobile_starter/services/app_meta_data_service.dart'
+    as _i9;
 import 'package:stacked_mobile_starter/services/json_resource_service.dart'
     as _i7;
 import 'package:stacked_services/stacked_services.dart' as _i2;
@@ -691,3 +693,9 @@ class MockJsonResourceService extends _i1.Mock
             _i5.Future<List<_i8.CountryInfoDataModel>?>.value(),
       ) as _i5.Future<List<_i8.CountryInfoDataModel>?>);
 }
+
+/// A class which mocks [AppMetaDataService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAppMetaDataService extends _i1.Mock
+    implements _i9.AppMetaDataService {}

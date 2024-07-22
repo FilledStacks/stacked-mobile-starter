@@ -123,10 +123,8 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
             ),
             Row(
               children: [
-                Expanded(
-                  child: Divider(
-                    color: AppColors.kcSlate300,
-                  ),
+                const Expanded(
+                  child: Divider(),
                 ),
                 const SizedBox(
                   width: 4,
@@ -140,10 +138,8 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
                 const SizedBox(
                   width: 4,
                 ),
-                Expanded(
-                  child: Divider(
-                    color: AppColors.kcSlate300,
-                  ),
+                const Expanded(
+                  child: Divider(),
                 ),
               ],
             ),

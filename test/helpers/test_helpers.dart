@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_mobile_starter/services/json_resource_service.dart';
+import 'package:stacked_mobile_starter/services/app_meta_data_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -12,6 +13,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<BottomSheetService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<JsonResourceService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<AppMetaDataService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -19,6 +21,7 @@ void registerServices() {
   getAndRegisterBottomSheetService();
   getAndRegisterDialogService();
   getAndRegisterJsonResourceService();
+  getAndRegisterAppMetaDataService();
 // @stacked-mock-register
 }
 
@@ -76,6 +79,13 @@ MockJsonResourceService getAndRegisterJsonResourceService() {
   _removeRegistrationIfExists<JsonResourceService>();
   final service = MockJsonResourceService();
   locator.registerSingleton<JsonResourceService>(service);
+  return service;
+}
+
+MockAppMetaDataService getAndRegisterAppMetaDataService() {
+  _removeRegistrationIfExists<AppMetaDataService>();
+  final service = MockAppMetaDataService();
+  locator.registerSingleton<AppMetaDataService>(service);
   return service;
 }
 // @stacked-mock-create

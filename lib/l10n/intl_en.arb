@@ -48,5 +48,26 @@
     "ksResend": "Resend",
     "ksHome": "Home",
     "ksProfile": "Profile",
-    "ksCarNotFoundText": "We can’t find the car you’re looking for."
+    "ksCarNotFoundText": "We can’t find the car you’re looking for.",
+    "ksEditProfile": "Edit Profile",
+    "ksHistory": "History",
+    "ksBookingHistory": "Booking History",
+    "ksTransactionHistory": "Transaction History",
+    "ksSettings": "Settings",
+    "ksPaymentSettings": "Payment Settings",
+    "ksNotifications": "Notifications",
+    "ksAccountSettings": "Account Settings",
+    "ksHelpAndSupport": "Help & Support",
+    "ksHelpCenter": "Help Center",
+    "ksReport": "Report",
+    "ksRateTheApp": "Rate the App",
+    "ksLogOut": "Log out",
+    "ksVersion": "Version {version}",
+    "@ksVersion": {
+      "placeholders": {
+          "version": {
+            "type": "String"
+          }
+        }
+    }
 }
