@@ -15,6 +15,7 @@ import 'package:stacked_mobile_starter/ui/views/verify_mobile/verify_mobile_view
 import 'package:stacked_mobile_starter/ui/views/wrapper/wrapper_view.dart';
 import 'package:stacked_mobile_starter/ui/views/search/search_view.dart';
 import 'package:stacked_mobile_starter/ui/views/profile/profile_view.dart';
+import 'package:stacked_mobile_starter/services/app_meta_data_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -43,6 +44,7 @@ import 'package:stacked_mobile_starter/ui/views/profile/profile_view.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: JsonResourceService),
+    LazySingleton(classType: AppMetaDataService),
 // @stacked-service
   ],
   bottomsheets: [

@@ -12,6 +12,7 @@ import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 import 'package:stacked_themes/src/theme_service.dart';
 
+import '../services/app_meta_data_service.dart';
 import '../services/json_resource_service.dart';
 
 final locator = StackedLocator.instance;
@@ -30,4 +31,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => DialogService());
   locator.registerLazySingleton(() => NavigationService());
   locator.registerLazySingleton(() => JsonResourceService());
+  locator.registerLazySingleton(() => AppMetaDataService());
 }

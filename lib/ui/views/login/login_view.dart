@@ -100,10 +100,8 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
             ),
             Row(
               children: [
-                Expanded(
-                  child: Divider(
-                    color: AppColors.kcSlate300,
-                  ),
+                const Expanded(
+                  child: Divider(),
                 ),
                 const SizedBox(
                   width: 4,
@@ -117,10 +115,8 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 const SizedBox(
                   width: 4,
                 ),
-                Expanded(
-                  child: Divider(
-                    color: AppColors.kcSlate300,
-                  ),
+                const Expanded(
+                  child: Divider(),
                 ),
               ],
             ),
