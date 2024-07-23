@@ -69,5 +69,9 @@
             "type": "String"
           }
         }
-    }
+    },
+    "ksFeaturedCars": "Featured Cars",
+    "ksSeeAll": "See All",
+    "ksBrowseByBrands": "Browse by Brands",
+    "ksAllCars": "All Cars"
 }
