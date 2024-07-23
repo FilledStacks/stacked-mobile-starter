@@ -46,6 +46,8 @@ class AppThemes {
         inputFieldHintColor: AppColors.kcZinc500,
         subTextColor: AppColors.kcSlate600,
         detailColor: AppColors.kcSlate600,
+        filterBackgroundColor: Colors.white,
+        filterBorderColor: AppColors.kcSlate200,
       ),
     ],
   );
@@ -91,6 +93,8 @@ class AppThemes {
         inputFieldHintColor: AppColors.kcZinc500,
         subTextColor: AppColors.kcSlate500,
         detailColor: AppColors.kcSlate200,
+        filterBackgroundColor: AppColors.kcZinc900,
+        filterBorderColor: AppColors.kcZinc800,
       ),
     ],
   );

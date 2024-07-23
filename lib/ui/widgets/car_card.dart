@@ -5,16 +5,19 @@ import 'package:stacked_mobile_starter/ui/common/common.dart';
 
 class CarCard extends StatelessWidget {
   final CarDataModel carData;
+  final double? width;
   final VoidCallback? onTap;
   const CarCard({
     super.key,
     required this.carData,
+    this.width,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: width,
       child: Material(
         color: Colors.transparent,
         borderRadius: const BorderRadius.only(

@@ -1,5 +1,6 @@
 export 'common/intl_phone_field/intl_phone_field.dart';
 export 'car_card.dart';
+export 'car_tile.dart';
 export 'custom_pin_field.dart';
 export 'empty_state.dart';
 export 'input_field.dart';

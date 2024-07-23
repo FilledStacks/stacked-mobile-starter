@@ -14,6 +14,8 @@ class Palette extends ThemeExtension<Palette> {
   final Color inputFieldContentColor;
   final Color subTextColor;
   final Color detailColor;
+  final Color filterBackgroundColor;
+  final Color filterBorderColor;
 
   Palette({
     required this.textColor,
@@ -29,6 +31,8 @@ class Palette extends ThemeExtension<Palette> {
     required this.inputFieldHintColor,
     required this.subTextColor,
     required this.detailColor,
+    required this.filterBackgroundColor,
+    required this.filterBorderColor,
   });
 
   @override
@@ -46,6 +50,8 @@ class Palette extends ThemeExtension<Palette> {
     Color? inputFieldContentColor,
     Color? subTextColor,
     Color? detailColor,
+    Color? filterBackgroundColor,
+    Color? filterBorderColor,
   }) {
     return Palette(
       textColor: textColor ?? this.textColor,
@@ -68,6 +74,9 @@ class Palette extends ThemeExtension<Palette> {
       inputFieldHintColor: inputFieldHintColor ?? this.inputFieldHintColor,
       subTextColor: subTextColor ?? this.subTextColor,
       detailColor: detailColor ?? this.detailColor,
+      filterBackgroundColor:
+          filterBackgroundColor ?? this.filterBackgroundColor,
+      filterBorderColor: filterBorderColor ?? this.filterBorderColor,
     );
   }
 
@@ -102,6 +111,10 @@ class Palette extends ThemeExtension<Palette> {
           Color.lerp(inputFieldHintColor, other.inputFieldHintColor, t)!,
       subTextColor: Color.lerp(subTextColor, other.subTextColor, t)!,
       detailColor: Color.lerp(detailColor, other.detailColor, t)!,
+      filterBackgroundColor:
+          Color.lerp(filterBackgroundColor, other.filterBackgroundColor, t)!,
+      filterBorderColor:
+          Color.lerp(filterBorderColor, other.filterBorderColor, t)!,
     );
   }
 }
