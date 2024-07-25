@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
-import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -41,7 +40,7 @@ class CountriesSheet extends StackedView<CountriesSheetModel> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            S.of(context).ksCountryTitle,
+            AppStrings.ksCountryTitle,
             style: AppTextStyles.ktsH4.copyWith(
               color: context.palette.textColor,
             ),
@@ -50,7 +49,7 @@ class CountriesSheet extends StackedView<CountriesSheetModel> {
             height: 16,
           ),
           InputField(
-            hint: S.of(context).ksSearch,
+            hint: AppStrings.ksSearch,
             onChanged: viewModel.searchCountry,
           ),
           const SizedBox(
@@ -60,9 +59,9 @@ class CountriesSheet extends StackedView<CountriesSheetModel> {
             child: Builder(
               builder: (context) {
                 if (viewModel.data == null || viewModel.data!.isEmpty) {
-                  return Center(
+                  return const Center(
                     child: EmptyState(
-                      message: S.of(context).ksCountryNotFoundText,
+                      message: AppStrings.ksCountryNotFoundText,
                     ),
                   );
                 }

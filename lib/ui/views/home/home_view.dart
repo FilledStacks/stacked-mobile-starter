@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
-import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
+import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
 import 'home_viewmodel.dart';
@@ -20,7 +19,7 @@ class HomeView extends StackedView<HomeViewModel> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          S.of(context).ksHome,
+          AppStrings.ksHome,
           style: AppTextStyles.ktsH2.copyWith(
             color: context.palette.textColor,
           ),
@@ -98,7 +97,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          S.of(context).ksFeaturedCars,
+                          AppStrings.ksFeaturedCars,
                           style: AppTextStyles.ktsH4.copyWith(
                             color: context.palette.textColor,
                           ),
@@ -106,7 +105,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         TextButton(
                           onPressed: viewModel.actionSeeAllFeaturedCars,
                           child: Text(
-                            S.of(context).ksSeeAll,
+                            AppStrings.ksSeeAll,
                             style: AppTextStyles.ktsSmall.copyWith(
                               color: context.palette.textColor,
                               decoration: TextDecoration.underline,
@@ -167,7 +166,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          S.of(context).ksBrowseByBrands,
+                          AppStrings.ksBrowseByBrands,
                           style: AppTextStyles.ktsH4.copyWith(
                             color: context.palette.textColor,
                           ),
@@ -175,7 +174,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         TextButton(
                           onPressed: viewModel.actionSeeAllBrands,
                           child: Text(
-                            S.of(context).ksSeeAll,
+                            AppStrings.ksSeeAll,
                             style: AppTextStyles.ktsSmall.copyWith(
                               color: context.palette.textColor,
                               decoration: TextDecoration.underline,
@@ -227,7 +226,7 @@ class HomeView extends StackedView<HomeViewModel> {
                   ),
                   sliver: SliverToBoxAdapter(
                     child: Text(
-                      S.of(context).ksAllCars,
+                      AppStrings.ksAllCars,
                       style: AppTextStyles.ktsH4.copyWith(
                         color: context.palette.textColor,
                       ),
@@ -275,7 +274,7 @@ class HomeView extends StackedView<HomeViewModel> {
                   ),
                   sliver: SliverToBoxAdapter(
                     child: Text(
-                      S.of(context).ksAllCars,
+                      AppStrings.ksAllCars,
                       style: AppTextStyles.ktsH4.copyWith(
                         color: context.palette.textColor,
                       ),

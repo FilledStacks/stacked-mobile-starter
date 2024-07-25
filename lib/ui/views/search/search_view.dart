@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
+import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
 import 'search_viewmodel.dart';
@@ -25,7 +25,7 @@ class SearchView extends StackedView<SearchViewModel> {
                 right: 16,
               ),
               child: InputField(
-                hint: S.of(context).ksSearch,
+                hint: AppStrings.ksSearch,
                 onChanged: viewModel.searchCar,
               ),
             ),
@@ -33,8 +33,8 @@ class SearchView extends StackedView<SearchViewModel> {
               child: Builder(
                 builder: (context) {
                   if (viewModel.carList.isEmpty) {
-                    return EmptyState(
-                      message: S.of(context).ksCarNotFoundText,
+                    return const EmptyState(
+                      message: AppStrings.ksCarNotFoundText,
                     );
                   }
 

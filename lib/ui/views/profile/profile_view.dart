@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 
 import 'profile_viewmodel.dart';
@@ -33,14 +32,14 @@ class ProfileView extends StackedView<ProfileViewModel> {
             const SizedBox(
               height: 24,
             ),
-            ProfileTileHeader(
-              label: S.of(context).ksHistory,
+            const ProfileTileHeader(
+              label: AppStrings.ksHistory,
             ),
             const SizedBox(
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksBookingHistory,
+              title: AppStrings.ksBookingHistory,
               icon: Icons.history,
               onTap: viewModel.actionMoveToBookingHistory,
             ),
@@ -48,7 +47,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksTransactionHistory,
+              title: AppStrings.ksTransactionHistory,
               icon: Icons.history,
               onTap: viewModel.actionMoveToTransactionHistory,
             ),
@@ -59,14 +58,14 @@ class ProfileView extends StackedView<ProfileViewModel> {
             const SizedBox(
               height: 16,
             ),
-            ProfileTileHeader(
-              label: S.of(context).ksSettings,
+            const ProfileTileHeader(
+              label: AppStrings.ksSettings,
             ),
             const SizedBox(
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksPaymentSettings,
+              title: AppStrings.ksPaymentSettings,
               icon: Icons.payment_outlined,
               onTap: viewModel.actionMoveToPayments,
             ),
@@ -74,7 +73,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksNotifications,
+              title: AppStrings.ksNotifications,
               icon: Icons.notifications_outlined,
               onTap: viewModel.actionMoveToNotificationSettings,
             ),
@@ -82,7 +81,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksAccountSettings,
+              title: AppStrings.ksAccountSettings,
               icon: Icons.person_outline,
               onTap: viewModel.actionMoveToAccountSettings,
             ),
@@ -93,14 +92,14 @@ class ProfileView extends StackedView<ProfileViewModel> {
             const SizedBox(
               height: 16,
             ),
-            ProfileTileHeader(
-              label: S.of(context).ksHelpAndSupport,
+            const ProfileTileHeader(
+              label: AppStrings.ksHelpAndSupport,
             ),
             const SizedBox(
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksHelpCenter,
+              title: AppStrings.ksHelpCenter,
               icon: Icons.notifications_outlined,
               onTap: viewModel.actionHelpCenter,
             ),
@@ -108,7 +107,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksReport,
+              title: AppStrings.ksReport,
               icon: Icons.report_problem_outlined,
               onTap: viewModel.actionReportProblem,
             ),
@@ -116,7 +115,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
               height: 16,
             ),
             ProfileTile(
-              title: S.of(context).ksRateTheApp,
+              title: AppStrings.ksRateTheApp,
               icon: Icons.star_outline,
               onTap: viewModel.actionRateApp,
             ),
@@ -129,17 +128,30 @@ class ProfileView extends StackedView<ProfileViewModel> {
                 TextButton(
                   onPressed: viewModel.actionLogout,
                   child: Text(
-                    S.of(context).ksLogOut,
+                    AppStrings.ksLogOut,
                     style: AppTextStyles.ktsSmall.copyWith(
                       color: context.palette.detailColor,
                       decoration: TextDecoration.underline,
                     ),
                   ),
                 ),
-                Text(
-                  S.of(context).ksVersion(viewModel.versionNumber ?? '--'),
-                  style: AppTextStyles.ktsDetail.copyWith(
-                    color: context.palette.detailColor,
+                RichText(
+                  text: TextSpan(
+                    text: AppStrings.ksVersion,
+                    style: AppTextStyles.ktsDetail.copyWith(
+                      color: context.palette.detailColor,
+                    ),
+                    children: [
+                      const TextSpan(
+                        text: '',
+                      ),
+                      TextSpan(
+                        text: viewModel.versionNumber ?? '--',
+                        style: AppTextStyles.ktsDetail.copyWith(
+                          color: context.palette.detailColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

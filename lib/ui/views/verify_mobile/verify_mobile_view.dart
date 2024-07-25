@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
@@ -37,7 +36,7 @@ class VerifyMobileView extends StackedView<VerifyMobileViewModel>
         ),
         children: [
           Text(
-            S.of(context).ksVerifyMobileTitle,
+            AppStrings.ksVerifyMobileTitle,
             style: AppTextStyles.ktsH2.copyWith(
               color: context.palette.textColor,
             ),
@@ -46,7 +45,7 @@ class VerifyMobileView extends StackedView<VerifyMobileViewModel>
             height: 8,
           ),
           Text(
-            S.of(context).ksVerifyMobileSubtitle,
+            AppStrings.ksVerifyMobileSubtitle,
             style: AppTextStyles.ktsSubtitle.copyWith(
               color: context.palette.subTextColor,
             ),
@@ -71,7 +70,7 @@ class VerifyMobileView extends StackedView<VerifyMobileViewModel>
           ),
           RichText(
             text: TextSpan(
-              text: S.of(context).ksDontHaveAnAccount,
+              text: AppStrings.ksDontHaveAnAccount,
               style: AppTextStyles.ktsDetail.copyWith(
                 color: context.palette.textColor,
               ),
@@ -80,7 +79,7 @@ class VerifyMobileView extends StackedView<VerifyMobileViewModel>
                   text: ' ',
                 ),
                 TextSpan(
-                  text: S.of(context).ksResend,
+                  text: AppStrings.ksResend,
                   recognizer: TapGestureRecognizer()
                     ..onTap = viewModel.actionResendOtp,
                   style: AppTextStyles.ktsDetail.copyWith(

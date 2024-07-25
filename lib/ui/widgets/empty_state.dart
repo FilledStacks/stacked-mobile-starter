@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 
 class EmptyState extends StatelessWidget {
@@ -28,7 +27,7 @@ class EmptyState extends StatelessWidget {
           height: 24,
         ),
         Text(
-          S.of(context).ksOppsSorry,
+          AppStrings.ksOppsSorry,
           style: AppTextStyles.ktsH4.copyWith(
             color: context.palette.textColor,
           ),

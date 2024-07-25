@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 
 import 'startup_viewmodel.dart';
@@ -32,7 +31,7 @@ class StartupView extends StackedView<StartupViewModel> {
               children: [
                 RichText(
                   text: TextSpan(
-                    text: S.of(context).ksLoading,
+                    text: 'Loading',
                     style: AppTextStyles.ktsTableHead.copyWith(
                       color: context.palette.textColor,
                     ),

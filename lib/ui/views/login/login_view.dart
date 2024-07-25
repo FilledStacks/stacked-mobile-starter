@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
@@ -39,7 +38,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
           ),
           children: [
             Text(
-              S.of(context).ksLogin,
+              AppStrings.ksLogin,
               style: AppTextStyles.ktsH2.copyWith(
                 color: context.palette.textColor,
               ),
@@ -48,7 +47,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 8,
             ),
             Text(
-              S.of(context).ksLoginSubtitle,
+              AppStrings.ksLoginSubtitle,
               style: AppTextStyles.ktsSubtitle.copyWith(
                 color: context.palette.subTextColor,
               ),
@@ -57,7 +56,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 40,
             ),
             InputField(
-              hint: S.of(context).ksEmail,
+              hint: AppStrings.ksEmail,
               controller: emailController,
               focusNode: emailFocusNode,
               keyboardType: TextInputType.emailAddress,
@@ -66,7 +65,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 24,
             ),
             InputField(
-              hint: S.of(context).ksPassword,
+              hint: AppStrings.ksPassword,
               controller: passwordController,
               focusNode: passwordFocusNode,
               obscureText: true,
@@ -80,7 +79,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               child: TextButton(
                 onPressed: viewModel.actionMoveToForgotPassword,
                 child: Text(
-                  S.of(context).ksForgotPassword,
+                  AppStrings.ksForgotPassword,
                   style: AppTextStyles.ktsSmall.copyWith(
                     color: context.palette.textColor,
                     decoration: TextDecoration.underline,
@@ -92,7 +91,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 24,
             ),
             PrimaryButton(
-              text: S.of(context).ksLogin,
+              text: AppStrings.ksLogin,
               onTap: viewModel.actionLogin,
             ),
             const SizedBox(
@@ -107,7 +106,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                   width: 4,
                 ),
                 Text(
-                  S.of(context).ksOrContinueWith,
+                  AppStrings.ksOrContinueWith,
                   style: AppTextStyles.ktsDetail.copyWith(
                     color: AppColors.kcSlate500,
                   ),
@@ -124,7 +123,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 40,
             ),
             PrimaryOulineButton.icon(
-              text: S.of(context).ksContinueWithApple,
+              text: AppStrings.ksContinueWithApple,
               icon: Image.asset(
                 'assets/png/apple.png',
                 height: 24,
@@ -137,7 +136,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 16,
             ),
             PrimaryOulineButton.icon(
-              text: S.of(context).ksContinueWithGoogle,
+              text: AppStrings.ksContinueWithGoogle,
               icon: Image.asset(
                 'assets/png/google.png',
                 height: 24,
@@ -150,7 +149,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               height: 16,
             ),
             PrimaryOulineButton.icon(
-              text: S.of(context).ksContinueWithFacebook,
+              text: AppStrings.ksContinueWithFacebook,
               icon: Image.asset(
                 'assets/png/fb_blue.png',
                 height: 24,
@@ -165,7 +164,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                text: S.of(context).ksDontHaveAnAccount,
+                text: AppStrings.ksDontHaveAnAccount,
                 style: AppTextStyles.ktsDetail.copyWith(
                   color: context.palette.textColor,
                 ),
@@ -174,7 +173,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                     text: ' ',
                   ),
                   TextSpan(
-                    text: S.of(context).ksCreateAccount,
+                    text: AppStrings.ksCreateAccount,
                     recognizer: TapGestureRecognizer()
                       ..onTap = viewModel.actionMoveToMobileSignup,
                     style: AppTextStyles.ktsDetail.copyWith(

@@ -3,7 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/data_models/onboard_data_model.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
+import 'package:stacked_mobile_starter/ui/common/app_strings.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
@@ -16,23 +16,23 @@ class OnboardingViewModel extends IndexTrackingViewModel {
   bool get isDarkMode => _themeService.isDarkMode;
 
   List<OnboardDataModel> onboardItems = [
-    OnboardDataModel(
+    const OnboardDataModel(
       imageLight: 'assets/png/onboard_image_one_light.png',
       imageDark: 'assets/png/onboard_image_one_dark.png',
-      title: S.current.ksOnboardingTitle,
-      subtitle: S.current.ksOnboardingSubtitle,
+      title: AppStrings.ksOnboardingTitle,
+      subtitle: AppStrings.ksOnboardingSubtitle,
     ),
-    OnboardDataModel(
+    const OnboardDataModel(
       imageLight: 'assets/png/onboard_image_two_light.png',
       imageDark: 'assets/png/onboard_image_two_dark.png',
-      title: S.current.ksOnboardingTitle,
-      subtitle: S.current.ksOnboardingSubtitle,
+      title: AppStrings.ksOnboardingTitle,
+      subtitle: AppStrings.ksOnboardingSubtitle,
     ),
-    OnboardDataModel(
+    const OnboardDataModel(
       imageLight: 'assets/png/onboard_image_one_light.png',
       imageDark: 'assets/png/onboard_image_one_dark.png',
-      title: S.current.ksOnboardingTitle,
-      subtitle: S.current.ksOnboardingSubtitle,
+      title: AppStrings.ksOnboardingTitle,
+      subtitle: AppStrings.ksOnboardingSubtitle,
     ),
   ];
 
