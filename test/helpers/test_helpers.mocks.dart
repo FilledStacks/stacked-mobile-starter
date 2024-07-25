@@ -698,4 +698,14 @@ class MockJsonResourceService extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockAppMetaDataService extends _i1.Mock
-    implements _i9.AppMetaDataService {}
+    implements _i9.AppMetaDataService {
+  @override
+  _i5.Future<String?> fetchInfo() => (super.noSuchMethod(
+        Invocation.method(
+          #fetchInfo,
+          [],
+        ),
+        returnValue: _i5.Future<String?>.value(),
+        returnValueForMissingStub: _i5.Future<String?>.value(),
+      ) as _i5.Future<String?>);
+}

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
@@ -42,7 +41,7 @@ class MobileSignupView extends StackedView<MobileSignupViewModel>
               ),
               children: [
                 Text(
-                  S.of(context).ksMobileSignupTitle,
+                  AppStrings.ksMobileSignupTitle,
                   style: AppTextStyles.ktsH2.copyWith(
                     color: context.palette.textColor,
                   ),
@@ -51,7 +50,7 @@ class MobileSignupView extends StackedView<MobileSignupViewModel>
                   height: 8,
                 ),
                 Text(
-                  S.of(context).ksMobileSignupSubtitle,
+                  AppStrings.ksMobileSignupSubtitle,
                   style: AppTextStyles.ktsSubtitle.copyWith(
                     color: context.palette.subTextColor,
                   ),
@@ -60,7 +59,7 @@ class MobileSignupView extends StackedView<MobileSignupViewModel>
                   height: 24,
                 ),
                 IntlPhoneField(
-                  hint: S.of(context).ksPhoneInputHint,
+                  hint: AppStrings.ksPhoneInputHint,
                   controller: phoneController,
                   focusNode: phoneFocusNode,
                   onChange: (value) {},
@@ -75,7 +74,7 @@ class MobileSignupView extends StackedView<MobileSignupViewModel>
               bottom: 10 + bottomSafeArea,
             ),
             child: PrimaryButton(
-              text: S.of(context).ksContinue,
+              text: AppStrings.ksContinue,
               onTap: viewModel.actionContinue,
             ),
           ),

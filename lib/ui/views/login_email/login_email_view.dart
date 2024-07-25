@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
@@ -37,7 +36,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
           ),
           children: [
             Text(
-              S.of(context).ksLogin,
+              AppStrings.ksLogin,
               textAlign: TextAlign.center,
               style: AppTextStyles.ktsH2.copyWith(
                 color: context.palette.textColor,
@@ -47,7 +46,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               height: 8,
             ),
             Text(
-              S.of(context).ksLoginSubtitle,
+              AppStrings.ksLoginSubtitle,
               textAlign: TextAlign.center,
               style: AppTextStyles.ktsSubtitle.copyWith(
                 color: context.palette.subTextColor,
@@ -57,7 +56,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               height: 40,
             ),
             InputField(
-              hint: S.of(context).ksEmail,
+              hint: AppStrings.ksEmail,
               controller: emailController,
               focusNode: emailFocusNode,
               keyboardType: TextInputType.emailAddress,
@@ -73,7 +72,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
-                  text: S.of(context).ksTermsFirstPart,
+                  text: AppStrings.ksTermsFirstPart,
                   style: AppTextStyles.ktsDetail.copyWith(
                     color: context.palette.detailColor,
                   ),
@@ -82,7 +81,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
                       text: ' ',
                     ),
                     TextSpan(
-                      text: S.of(context).ksTermsOfService,
+                      text: AppStrings.ksTermsOfService,
                       style: AppTextStyles.ktsDetail.copyWith(
                         color: context.palette.detailColor,
                         decoration: TextDecoration.underline,
@@ -92,7 +91,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
                       text: ' ',
                     ),
                     TextSpan(
-                      text: S.of(context).ksAnd,
+                      text: AppStrings.ksAnd,
                       style: AppTextStyles.ktsDetail.copyWith(
                         color: context.palette.detailColor,
                       ),
@@ -101,7 +100,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
                       text: ' ',
                     ),
                     TextSpan(
-                      text: S.of(context).ksPrivacyPolicy,
+                      text: AppStrings.ksPrivacyPolicy,
                       style: AppTextStyles.ktsDetail.copyWith(
                         color: context.palette.detailColor,
                         decoration: TextDecoration.underline,
@@ -115,7 +114,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               height: 24,
             ),
             PrimaryButton(
-              text: S.of(context).ksContinueWithEmail,
+              text: AppStrings.ksContinueWithEmail,
               onTap: viewModel.actionLoginWithEmail,
             ),
             const SizedBox(
@@ -130,7 +129,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
                   width: 4,
                 ),
                 Text(
-                  S.of(context).ksOrContinueWith,
+                  AppStrings.ksOrContinueWith,
                   style: AppTextStyles.ktsDetail.copyWith(
                     color: AppColors.kcSlate500,
                   ),
@@ -147,7 +146,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               height: 40,
             ),
             PrimaryOulineButton.icon(
-              text: S.of(context).ksContinueWithApple,
+              text: AppStrings.ksContinueWithApple,
               icon: Image.asset(
                 'assets/png/apple.png',
                 height: 24,
@@ -160,7 +159,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               height: 16,
             ),
             PrimaryOulineButton.icon(
-              text: S.of(context).ksContinueWithGoogle,
+              text: AppStrings.ksContinueWithGoogle,
               icon: Image.asset(
                 'assets/png/google.png',
                 height: 24,
@@ -173,7 +172,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
               height: 16,
             ),
             PrimaryOulineButton.icon(
-              text: S.of(context).ksContinueWithFacebook,
+              text: AppStrings.ksContinueWithFacebook,
               icon: Image.asset(
                 'assets/png/fb_blue.png',
                 height: 24,
@@ -188,7 +187,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                text: S.of(context).ksDontHaveAnAccount,
+                text: AppStrings.ksDontHaveAnAccount,
                 style: AppTextStyles.ktsDetail.copyWith(
                   color: context.palette.textColor,
                 ),
@@ -197,7 +196,7 @@ class LoginEmailView extends StackedView<LoginEmailViewModel>
                     text: ' ',
                   ),
                   TextSpan(
-                    text: S.of(context).ksCreateAccount,
+                    text: AppStrings.ksCreateAccount,
                     recognizer: TapGestureRecognizer()
                       ..onTap = viewModel.actionMoveToMobileSignup,
                     style: AppTextStyles.ktsDetail.copyWith(

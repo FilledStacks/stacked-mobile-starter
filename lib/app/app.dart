@@ -1,5 +1,3 @@
-import 'package:stacked_mobile_starter/ui/bottom_sheets/notice/notice_sheet.dart';
-import 'package:stacked_mobile_starter/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:stacked_mobile_starter/ui/views/home/home_view.dart';
 import 'package:stacked_mobile_starter/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -48,13 +46,8 @@ import 'package:stacked_mobile_starter/services/app_meta_data_service.dart';
 // @stacked-service
   ],
   bottomsheets: [
-    StackedBottomsheet(classType: NoticeSheet),
     StackedBottomsheet(classType: CountriesSheet),
 // @stacked-bottom-sheet
-  ],
-  dialogs: [
-    StackedDialog(classType: InfoAlertDialog),
-    // @stacked-dialog
   ],
   logger: StackedLogger(),
 )

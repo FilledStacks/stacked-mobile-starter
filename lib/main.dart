@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:stacked_mobile_starter/app/app.bottomsheets.dart';
-import 'package:stacked_mobile_starter/app/app.dialogs.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/app/app.router.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
 import 'package:stacked_mobile_starter/ui/common/app_themes.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
@@ -15,7 +12,6 @@ Future<void> main() async {
   await setupLocator();
   await ThemeManager.initialise();
   _initSystemUI();
-  setupDialogUi();
   setupBottomSheetUi();
   runApp(const MainApp());
 }
@@ -38,13 +34,6 @@ class MainApp extends StatelessWidget {
           navigatorObservers: [
             StackedService.routeObserver,
           ],
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
         );
       },
     );

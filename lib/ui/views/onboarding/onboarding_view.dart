@@ -2,8 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
-import 'package:stacked_mobile_starter/generated/l10n.dart';
-import 'package:stacked_mobile_starter/ui/common/app_text_styles.dart';
+import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
 import 'onboarding_viewmodel.dart';
@@ -108,14 +107,14 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                 children: [
                   Expanded(
                     child: PrimaryButton(
-                      text: S.of(context).ksLogin,
+                      text: AppStrings.ksLogin,
                       onTap: viewModel.actionMoveToLogin,
                     ),
                   ),
                   const Spacer(),
                   Expanded(
                     child: TransparentButton(
-                      text: S.of(context).ksGetStarted,
+                      text: AppStrings.ksGetStarted,
                       onTap: viewModel.actionMoveToGetStarted,
                     ),
                   ),
