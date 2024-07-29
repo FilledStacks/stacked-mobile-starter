@@ -33,7 +33,9 @@ class ProfileViewModel extends BaseViewModel {
 
   void actionHelpCenter() {}
 
-  void actionMoveToAccountSettings() {}
+  void actionMoveToAccountSettings() {
+    _navigationService.navigateToAccountSettingsView();
+  }
 
   void actionMoveToNotificationSettings() {}
 
@@ -56,8 +58,12 @@ class ProfileViewModel extends BaseViewModel {
 
     if (sheetResponse?.data == ImageSource.camera) {
       await _imageService.selectFromCamera();
-    } else {
+      return;
+    }
+
+    if (sheetResponse?.data == ImageSource.gallery) {
       await _imageService.selectFromGallery();
+      return;
     }
   }
 }

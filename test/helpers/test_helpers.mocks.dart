@@ -4,6 +4,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
+import 'dart:io' as _i11;
 import 'dart:ui' as _i6;
 
 import 'package:flutter/material.dart' as _i4;
@@ -714,4 +715,24 @@ class MockAppMetaDataService extends _i1.Mock
 /// A class which mocks [ImageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockImageService extends _i1.Mock implements _i10.ImageService {}
+class MockImageService extends _i1.Mock implements _i10.ImageService {
+  @override
+  _i5.Future<_i11.File?> selectFromCamera() => (super.noSuchMethod(
+        Invocation.method(
+          #selectFromCamera,
+          [],
+        ),
+        returnValue: _i5.Future<_i11.File?>.value(),
+        returnValueForMissingStub: _i5.Future<_i11.File?>.value(),
+      ) as _i5.Future<_i11.File?>);
+
+  @override
+  _i5.Future<_i11.File?> selectFromGallery() => (super.noSuchMethod(
+        Invocation.method(
+          #selectFromGallery,
+          [],
+        ),
+        returnValue: _i5.Future<_i11.File?>.value(),
+        returnValueForMissingStub: _i5.Future<_i11.File?>.value(),
+      ) as _i5.Future<_i11.File?>);
+}

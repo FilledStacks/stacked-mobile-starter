@@ -7,6 +7,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
+import 'package:stacked_mobile_starter/ui/views/account_settings/account_settings_view.dart'
+    as _i12;
 import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i9;
 import 'package:stacked_mobile_starter/ui/views/login/login_view.dart' as _i5;
 import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart'
@@ -25,7 +27,7 @@ import 'package:stacked_mobile_starter/ui/views/verify_mobile/verify_mobile_view
     as _i7;
 import 'package:stacked_mobile_starter/ui/views/wrapper/wrapper_view.dart'
     as _i8;
-import 'package:stacked_services/stacked_services.dart' as _i12;
+import 'package:stacked_services/stacked_services.dart' as _i13;
 
 class Routes {
   static const startupView = '/';
@@ -48,6 +50,8 @@ class Routes {
 
   static const profileView = '/profile-view';
 
+  static const accountSettingsView = '/account-settings-view';
+
   static const all = <String>{
     startupView,
     onboardingView,
@@ -59,6 +63,7 @@ class Routes {
     homeView,
     searchView,
     profileView,
+    accountSettingsView,
   };
 }
 
@@ -103,6 +108,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.profileView,
       page: _i11.ProfileView,
+    ),
+    _i1.RouteDef(
+      Routes.accountSettingsView,
+      page: _i12.AccountSettingsView,
     ),
   ];
 
@@ -167,6 +176,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i12.AccountSettingsView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i12.AccountSettingsView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -176,7 +191,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i12.NavigationService {
+extension NavigatorStateExtension on _i13.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -317,6 +332,20 @@ extension NavigatorStateExtension on _i12.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToAccountSettingsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.accountSettingsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -451,6 +480,20 @@ extension NavigatorStateExtension on _i12.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.profileView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAccountSettingsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.accountSettingsView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

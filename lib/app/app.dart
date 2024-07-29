@@ -16,6 +16,7 @@ import 'package:stacked_mobile_starter/ui/views/profile/profile_view.dart';
 import 'package:stacked_mobile_starter/services/app_meta_data_service.dart';
 import 'package:stacked_mobile_starter/ui/bottom_sheets/image_source/image_source_sheet.dart';
 import 'package:stacked_mobile_starter/services/image_service.dart';
+import 'package:stacked_mobile_starter/ui/views/account_settings/account_settings_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -33,6 +34,7 @@ import 'package:stacked_mobile_starter/services/image_service.dart';
     AdaptiveRoute(page: HomeView),
     AdaptiveRoute(page: SearchView),
     AdaptiveRoute(page: ProfileView),
+    AdaptiveRoute(page: AccountSettingsView),
 // @stacked-route
   ],
   dependencies: [
