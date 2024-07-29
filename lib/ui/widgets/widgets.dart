@@ -6,4 +6,5 @@ export 'empty_state.dart';
 export 'input_field.dart';
 export 'primary_button.dart';
 export 'primary_outline_button.dart';
+export 'profile_tile.dart';
 export 'transparent_button.dart';

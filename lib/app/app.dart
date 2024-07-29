@@ -14,6 +14,8 @@ import 'package:stacked_mobile_starter/ui/views/wrapper/wrapper_view.dart';
 import 'package:stacked_mobile_starter/ui/views/search/search_view.dart';
 import 'package:stacked_mobile_starter/ui/views/profile/profile_view.dart';
 import 'package:stacked_mobile_starter/services/app_meta_data_service.dart';
+import 'package:stacked_mobile_starter/ui/bottom_sheets/image_source/image_source_sheet.dart';
+import 'package:stacked_mobile_starter/services/image_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -43,10 +45,12 @@ import 'package:stacked_mobile_starter/services/app_meta_data_service.dart';
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: JsonResourceService),
     LazySingleton(classType: AppMetaDataService),
+    LazySingleton(classType: ImageService),
 // @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: CountriesSheet),
+    StackedBottomsheet(classType: ImageSourceSheet),
 // @stacked-bottom-sheet
   ],
   logger: StackedLogger(),
