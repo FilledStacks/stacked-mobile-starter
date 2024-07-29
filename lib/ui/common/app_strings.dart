@@ -59,4 +59,5 @@ class AppStrings {
   static const String ksUploadPhoto = "Update Photo";
   static const String ksUseCamera = "Use Camera";
   static const String ksUploadPhotoFromFiles = "Upload Photo from Files";
+  static const String ksAccountName = "Account Name";
 }
