@@ -56,4 +56,7 @@ class AppStrings {
   static const String ksSeeAll = "See All";
   static const String ksBrowseByBrands = "Browse by Brands";
   static const String ksAllCars = "All Cars";
+  static const String ksUploadPhoto = "Update Photo";
+  static const String ksUseCamera = "Use Camera";
+  static const String ksUploadPhotoFromFiles = "Upload Photo from Files";
 }

@@ -28,6 +28,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Stacked mobile starter would like to access your camera to take pictures</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Stacked mobile starter would like to access your photos</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

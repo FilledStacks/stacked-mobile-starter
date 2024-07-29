@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
+import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
 
 import 'profile_viewmodel.dart';
 import 'widgets/widgets.dart';

@@ -12,6 +12,7 @@ import 'package:mockito/src/dummies.dart' as _i3;
 import 'package:stacked_mobile_starter/data_models/data_models.dart' as _i8;
 import 'package:stacked_mobile_starter/services/app_meta_data_service.dart'
     as _i9;
+import 'package:stacked_mobile_starter/services/image_service.dart' as _i10;
 import 'package:stacked_mobile_starter/services/json_resource_service.dart'
     as _i7;
 import 'package:stacked_services/stacked_services.dart' as _i2;
@@ -709,3 +710,8 @@ class MockAppMetaDataService extends _i1.Mock
         returnValueForMissingStub: _i5.Future<String?>.value(),
       ) as _i5.Future<String?>);
 }
+
+/// A class which mocks [ImageService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockImageService extends _i1.Mock implements _i10.ImageService {}
