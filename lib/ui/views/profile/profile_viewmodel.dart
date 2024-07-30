@@ -37,7 +37,9 @@ class ProfileViewModel extends BaseViewModel {
     _navigationService.navigateToAccountSettingsView();
   }
 
-  void actionMoveToNotificationSettings() {}
+  void actionMoveToNotificationSettings() {
+    _navigationService.navigateToNotificationSettingsView();
+  }
 
   void actionMoveToPayments() {}
 

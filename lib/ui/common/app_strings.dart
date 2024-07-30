@@ -60,4 +60,16 @@ class AppStrings {
   static const String ksUseCamera = "Use Camera";
   static const String ksUploadPhotoFromFiles = "Upload Photo from Files";
   static const String ksAccountName = "Account Name";
+  static const String ksNotificationSettings = "Notification Settings";
+  static const String ksBookingAcceptance = "Booking Acceptance";
+  static const String ksBookingAcceptanceSubtitle =
+      "Get notified when someone accepts your request";
+  static const String ksPromotionalNotifications = "Promotional Notifications";
+  static const String ksPromotionalNotificationsSubtitle =
+      "Get notified when there are promotions";
+  static const String ksUpdates = "Updates";
+  static const String ksUpdatesSubtitle = "Get notified when there are updates";
+  static const String ksTurnOffAll = "Turn Off All";
+  static const String ksSms = "SMS";
+  static const String ksInApp = "In-app";
 }
