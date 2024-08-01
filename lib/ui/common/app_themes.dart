@@ -31,6 +31,11 @@ class AppThemes {
     dividerTheme: DividerThemeData(
       color: AppColors.kcSlate200,
     ),
+    sliderTheme: SliderThemeData(
+      activeTrackColor: AppColors.kcSlate900,
+      inactiveTrackColor: AppColors.kcSlate100,
+      thumbColor: Colors.white,
+    ),
     extensions: [
       Palette(
         textColor: Colors.black,
@@ -77,6 +82,11 @@ class AppThemes {
     ),
     dividerTheme: DividerThemeData(
       color: AppColors.kcZinc800,
+    ),
+    sliderTheme: SliderThemeData(
+      activeTrackColor: Colors.white,
+      inactiveTrackColor: AppColors.kcZinc700,
+      thumbColor: Colors.white,
     ),
     extensions: [
       Palette(

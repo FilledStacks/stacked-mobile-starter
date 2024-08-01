@@ -8,11 +8,13 @@ import 'package:stacked_services/stacked_services.dart';
 
 import 'app.locator.dart';
 import '../ui/bottom_sheets/countries/countries_sheet.dart';
+import '../ui/bottom_sheets/filter/filter_sheet.dart';
 import '../ui/bottom_sheets/image_source/image_source_sheet.dart';
 
 enum BottomSheetType {
   countries,
   imageSource,
+  filter,
 }
 
 void setupBottomSheetUi() {
@@ -23,6 +25,8 @@ void setupBottomSheetUi() {
         CountriesSheet(request: request, completer: completer),
     BottomSheetType.imageSource: (context, request, completer) =>
         ImageSourceSheet(request: request, completer: completer),
+    BottomSheetType.filter: (context, request, completer) =>
+        FilterSheet(request: request, completer: completer),
   };
 
   bottomsheetService.setCustomSheetBuilders(builders);
