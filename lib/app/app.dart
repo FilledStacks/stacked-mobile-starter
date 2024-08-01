@@ -18,6 +18,7 @@ import 'package:stacked_mobile_starter/ui/bottom_sheets/image_source/image_sourc
 import 'package:stacked_mobile_starter/services/image_service.dart';
 import 'package:stacked_mobile_starter/ui/views/account_settings/account_settings_view.dart';
 import 'package:stacked_mobile_starter/ui/views/notification_settings/notification_settings_view.dart';
+import 'package:stacked_mobile_starter/ui/bottom_sheets/filter/filter_sheet.dart';
 // @stacked-import
 
 @StackedApp(
@@ -55,6 +56,7 @@ import 'package:stacked_mobile_starter/ui/views/notification_settings/notificati
   bottomsheets: [
     StackedBottomsheet(classType: CountriesSheet),
     StackedBottomsheet(classType: ImageSourceSheet),
+    StackedBottomsheet(classType: FilterSheet),
 // @stacked-bottom-sheet
   ],
   logger: StackedLogger(),

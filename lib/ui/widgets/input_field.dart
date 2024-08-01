@@ -11,6 +11,7 @@ class InputField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
   final ValueChanged<String>? onFieldSubmitted;
   final ValueChanged<String>? onChanged;
+  final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool readOnly;
   final int? maxLines;
@@ -24,6 +25,7 @@ class InputField extends StatelessWidget {
     this.validator,
     this.onFieldSubmitted,
     this.onChanged,
+    this.prefixIcon,
     this.suffixIcon,
     this.readOnly = false,
     this.maxLines = 1,
@@ -46,6 +48,7 @@ class InputField extends StatelessWidget {
         hintStyle: AppTextStyles.ktsP.copyWith(
           color: context.palette.inputFieldHintColor,
         ),
+        prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         fillColor: context.palette.inputFieldFilledColor,
         filled: true,

@@ -72,4 +72,13 @@ class AppStrings {
   static const String ksTurnOffAll = "Turn Off All";
   static const String ksSms = "SMS";
   static const String ksInApp = "In-app";
+  static const String ksFilter = "Filter";
+  static const String ksTransmission = "Transmission";
+  static const String ksManualTransmission = "Manual Transmission";
+  static const String ksAutomaticTransmission = "Automatic Transmission";
+  static const String ksGasoline = "Gasoline";
+  static const String ksFullTank = "Full - tank";
+  static const String ksHalfTank = "Half - tank";
+  static const String ksPrice = "Price";
+  static const String ksApplyFilter = "Apply Filter";
 }

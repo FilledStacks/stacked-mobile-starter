@@ -1,7 +1,12 @@
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/app/app.bottomsheets.dart';
+import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/data_models/data_models.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class HomeViewModel extends BaseViewModel {
+  final _bottomSheetService = locator<BottomSheetService>();
+
   List<CarDataModel> carList = [
     const CarDataModel(
       image: 'assets/png/vehicle_one.png',
@@ -67,5 +72,10 @@ class HomeViewModel extends BaseViewModel {
     required CarDataModel carData,
   }) {}
 
-  void actionApplyFilter() {}
+  void actionApplyFilter() {
+    _bottomSheetService.showCustomSheet(
+      variant: BottomSheetType.filter,
+      isScrollControlled: true,
+    );
+  }
 }
