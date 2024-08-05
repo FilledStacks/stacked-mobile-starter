@@ -4,7 +4,7 @@ import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/data_models/data_models.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class HomeViewModel extends BaseViewModel {
+class HomeViewModel extends IndexTrackingViewModel {
   final _bottomSheetService = locator<BottomSheetService>();
 
   List<CarDataModel> carList = [

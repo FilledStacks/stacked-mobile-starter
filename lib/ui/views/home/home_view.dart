@@ -26,22 +26,27 @@ class HomeView extends StackedView<HomeViewModel> {
         ),
         centerTitle: false,
         actions: [
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: context.palette.primaryButtonColor,
+          Padding(
+            padding: const EdgeInsets.only(
+              right: 16,
             ),
-            child: Material(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.circular(96),
-              child: InkWell(
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: context.palette.primaryButtonColor,
+              ),
+              child: Material(
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(96),
-                onTap: viewModel.actionApplyFilter,
-                child: Icon(
-                  Icons.tune,
-                  color: context.palette.primaryButtonTextColor,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(96),
+                  onTap: viewModel.actionApplyFilter,
+                  child: Icon(
+                    Icons.tune,
+                    color: context.palette.primaryButtonTextColor,
+                  ),
                 ),
               ),
             ),
@@ -71,6 +76,10 @@ class HomeView extends StackedView<HomeViewModel> {
                         final title = viewModel.filters.elementAt(index);
                         return FilterCard(
                           title: title,
+                          isSelected: index == viewModel.currentIndex,
+                          onTap: () {
+                            viewModel.setIndex(index);
+                          },
                         );
                       },
                       separatorBuilder: (context, index) {
