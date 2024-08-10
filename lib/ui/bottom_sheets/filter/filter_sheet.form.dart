@@ -11,8 +11,8 @@ import 'package:stacked/stacked.dart';
 
 const bool _autoTextFieldValidation = true;
 
-const String MinValueKey = 'min';
-const String MaxValueKey = 'max';
+const String MinAmountValueKey = 'min_amount';
+const String MaxAmountValueKey = 'max_amount';
 
 final Map<String, TextEditingController> _FilterSheetTextEditingControllers =
     {};
@@ -20,18 +20,18 @@ final Map<String, TextEditingController> _FilterSheetTextEditingControllers =
 final Map<String, FocusNode> _FilterSheetFocusNodes = {};
 
 final Map<String, String? Function(String?)?> _FilterSheetTextValidations = {
-  MinValueKey: null,
-  MaxValueKey: null,
+  MinAmountValueKey: null,
+  MaxAmountValueKey: null,
 };
 
 mixin $FilterSheet {
-  TextEditingController get minController =>
-      _getFormTextEditingController(MinValueKey);
-  TextEditingController get maxController =>
-      _getFormTextEditingController(MaxValueKey);
+  TextEditingController get minAmountController =>
+      _getFormTextEditingController(MinAmountValueKey);
+  TextEditingController get maxAmountController =>
+      _getFormTextEditingController(MaxAmountValueKey);
 
-  FocusNode get minFocusNode => _getFormFocusNode(MinValueKey);
-  FocusNode get maxFocusNode => _getFormFocusNode(MaxValueKey);
+  FocusNode get minAmountFocusNode => _getFormFocusNode(MinAmountValueKey);
+  FocusNode get maxAmountFocusNode => _getFormFocusNode(MaxAmountValueKey);
 
   TextEditingController _getFormTextEditingController(
     String key, {
@@ -57,8 +57,8 @@ mixin $FilterSheet {
   /// Registers a listener on every generated controller that calls [model.setData()]
   /// with the latest textController values
   void syncFormWithViewModel(FormStateHelper model) {
-    minController.addListener(() => _updateFormData(model));
-    maxController.addListener(() => _updateFormData(model));
+    minAmountController.addListener(() => _updateFormData(model));
+    maxAmountController.addListener(() => _updateFormData(model));
 
     _updateFormData(model, forceValidate: _autoTextFieldValidation);
   }
@@ -70,8 +70,8 @@ mixin $FilterSheet {
     'This feature was deprecated after 3.1.0.',
   )
   void listenToFormUpdated(FormViewModel model) {
-    minController.addListener(() => _updateFormData(model));
-    maxController.addListener(() => _updateFormData(model));
+    minAmountController.addListener(() => _updateFormData(model));
+    maxAmountController.addListener(() => _updateFormData(model));
 
     _updateFormData(model, forceValidate: _autoTextFieldValidation);
   }
@@ -81,8 +81,8 @@ mixin $FilterSheet {
     model.setData(
       model.formValueMap
         ..addAll({
-          MinValueKey: minController.text,
-          MaxValueKey: maxController.text,
+          MinAmountValueKey: minAmountController.text,
+          MaxAmountValueKey: maxAmountController.text,
         }),
     );
 
@@ -124,64 +124,64 @@ extension ValueProperties on FormStateHelper {
     return !hasAnyValidationMessage;
   }
 
-  String? get minValue => this.formValueMap[MinValueKey] as String?;
-  String? get maxValue => this.formValueMap[MaxValueKey] as String?;
+  String? get minAmountValue => this.formValueMap[MinAmountValueKey] as String?;
+  String? get maxAmountValue => this.formValueMap[MaxAmountValueKey] as String?;
 
-  set minValue(String? value) {
+  set minAmountValue(String? value) {
     this.setData(
-      this.formValueMap..addAll({MinValueKey: value}),
+      this.formValueMap..addAll({MinAmountValueKey: value}),
     );
 
-    if (_FilterSheetTextEditingControllers.containsKey(MinValueKey)) {
-      _FilterSheetTextEditingControllers[MinValueKey]?.text = value ?? '';
+    if (_FilterSheetTextEditingControllers.containsKey(MinAmountValueKey)) {
+      _FilterSheetTextEditingControllers[MinAmountValueKey]?.text = value ?? '';
     }
   }
 
-  set maxValue(String? value) {
+  set maxAmountValue(String? value) {
     this.setData(
-      this.formValueMap..addAll({MaxValueKey: value}),
+      this.formValueMap..addAll({MaxAmountValueKey: value}),
     );
 
-    if (_FilterSheetTextEditingControllers.containsKey(MaxValueKey)) {
-      _FilterSheetTextEditingControllers[MaxValueKey]?.text = value ?? '';
+    if (_FilterSheetTextEditingControllers.containsKey(MaxAmountValueKey)) {
+      _FilterSheetTextEditingControllers[MaxAmountValueKey]?.text = value ?? '';
     }
   }
 
-  bool get hasMin =>
-      this.formValueMap.containsKey(MinValueKey) &&
-      (minValue?.isNotEmpty ?? false);
-  bool get hasMax =>
-      this.formValueMap.containsKey(MaxValueKey) &&
-      (maxValue?.isNotEmpty ?? false);
+  bool get hasMinAmount =>
+      this.formValueMap.containsKey(MinAmountValueKey) &&
+      (minAmountValue?.isNotEmpty ?? false);
+  bool get hasMaxAmount =>
+      this.formValueMap.containsKey(MaxAmountValueKey) &&
+      (maxAmountValue?.isNotEmpty ?? false);
 
-  bool get hasMinValidationMessage =>
-      this.fieldsValidationMessages[MinValueKey]?.isNotEmpty ?? false;
-  bool get hasMaxValidationMessage =>
-      this.fieldsValidationMessages[MaxValueKey]?.isNotEmpty ?? false;
+  bool get hasMinAmountValidationMessage =>
+      this.fieldsValidationMessages[MinAmountValueKey]?.isNotEmpty ?? false;
+  bool get hasMaxAmountValidationMessage =>
+      this.fieldsValidationMessages[MaxAmountValueKey]?.isNotEmpty ?? false;
 
-  String? get minValidationMessage =>
-      this.fieldsValidationMessages[MinValueKey];
-  String? get maxValidationMessage =>
-      this.fieldsValidationMessages[MaxValueKey];
+  String? get minAmountValidationMessage =>
+      this.fieldsValidationMessages[MinAmountValueKey];
+  String? get maxAmountValidationMessage =>
+      this.fieldsValidationMessages[MaxAmountValueKey];
 }
 
 extension Methods on FormStateHelper {
-  setMinValidationMessage(String? validationMessage) =>
-      this.fieldsValidationMessages[MinValueKey] = validationMessage;
-  setMaxValidationMessage(String? validationMessage) =>
-      this.fieldsValidationMessages[MaxValueKey] = validationMessage;
+  setMinAmountValidationMessage(String? validationMessage) =>
+      this.fieldsValidationMessages[MinAmountValueKey] = validationMessage;
+  setMaxAmountValidationMessage(String? validationMessage) =>
+      this.fieldsValidationMessages[MaxAmountValueKey] = validationMessage;
 
   /// Clears text input fields on the Form
   void clearForm() {
-    minValue = '';
-    maxValue = '';
+    minAmountValue = '';
+    maxAmountValue = '';
   }
 
   /// Validates text input fields on the Form
   void validateForm() {
     this.setValidationMessages({
-      MinValueKey: getValidationMessage(MinValueKey),
-      MaxValueKey: getValidationMessage(MaxValueKey),
+      MinAmountValueKey: getValidationMessage(MinAmountValueKey),
+      MaxAmountValueKey: getValidationMessage(MaxAmountValueKey),
     });
   }
 }
@@ -201,6 +201,6 @@ String? getValidationMessage(String key) {
 /// Updates the fieldsValidationMessages on the FormViewModel
 void updateValidationData(FormStateHelper model) =>
     model.setValidationMessages({
-      MinValueKey: getValidationMessage(MinValueKey),
-      MaxValueKey: getValidationMessage(MaxValueKey),
+      MinAmountValueKey: getValidationMessage(MinAmountValueKey),
+      MaxAmountValueKey: getValidationMessage(MaxAmountValueKey),
     });

@@ -81,4 +81,14 @@ class AppStrings {
   static const String ksHalfTank = "Half - tank";
   static const String ksPrice = "Price";
   static const String ksApplyFilter = "Apply Filter";
+  static const String ksEditAccountName = "Edit Account Name";
+  static const String ksFirstNameLabel = "First Name";
+  static const String ksFirstNameHint = "first name";
+  static const String ksLastNameLabel = "Last Name";
+  static const String ksLastNameHint = "last name";
+  static const String ksDone = "Done";
+  static const String ksEditEmail = "Edit Email";
+  static const String ksEmailHint = "email";
+  static const String ksEditPassword = "Edit Password";
+  static const String ksPasswordHint = "password";
 }

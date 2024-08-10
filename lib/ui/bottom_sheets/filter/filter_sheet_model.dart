@@ -3,10 +3,6 @@ import 'package:stacked_mobile_starter/data_models/data_models.dart';
 import 'package:stacked_mobile_starter/ui/bottom_sheets/filter/filter_sheet.form.dart';
 
 class FilterSheetModel extends FormViewModel {
-  FilterSheetModel() {
-    minValue = currentRange.start.toStringAsFixed(2);
-    maxValue = currentRange.end.toStringAsFixed(2);
-  }
   bool manualTransmission = false;
   bool automaticTransmission = false;
   bool fullTank = false;
@@ -19,13 +15,18 @@ class FilterSheetModel extends FormViewModel {
 
   RangeValuesDataModel get currentRange => _currentRange;
 
+  void initRange() {
+    minAmountValue = currentRange.start.toStringAsFixed(2);
+    maxAmountValue = currentRange.end.toStringAsFixed(2);
+  }
+
   void actionUpdateRange(double start, double end) {
     _currentRange = RangeValuesDataModel(
       start: start,
       end: end,
     );
-    minValue = start.toStringAsFixed(2);
-    maxValue = end.toStringAsFixed(2);
+    minAmountValue = start.toStringAsFixed(2);
+    maxAmountValue = end.toStringAsFixed(2);
     rebuildUi();
   }
 
