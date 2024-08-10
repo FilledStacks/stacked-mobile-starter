@@ -12,8 +12,8 @@ import 'widgets/widgets.dart';
 
 @FormView(
   fields: [
-    FormTextField(name: 'min'),
-    FormTextField(name: 'max'),
+    FormTextField(name: 'min_amount'),
+    FormTextField(name: 'max_amount'),
   ],
 )
 class FilterSheet extends StackedView<FilterSheetModel> with $FilterSheet {
@@ -152,8 +152,8 @@ class FilterSheet extends StackedView<FilterSheetModel> with $FilterSheet {
                       child: Column(
                         children: [
                           RangeInput(
-                            controller: minController,
-                            focusNode: minFocusNode,
+                            controller: minAmountController,
+                            focusNode: minAmountFocusNode,
                           ),
                         ],
                       ),
@@ -165,8 +165,8 @@ class FilterSheet extends StackedView<FilterSheetModel> with $FilterSheet {
                       child: Column(
                         children: [
                           RangeInput(
-                            controller: maxController,
-                            focusNode: maxFocusNode,
+                            controller: maxAmountController,
+                            focusNode: maxAmountFocusNode,
                           ),
                         ],
                       ),
@@ -200,6 +200,7 @@ class FilterSheet extends StackedView<FilterSheetModel> with $FilterSheet {
   @override
   void onViewModelReady(FilterSheetModel viewModel) {
     syncFormWithViewModel(viewModel);
+    viewModel.initRange();
     super.onViewModelReady(viewModel);
   }
 
