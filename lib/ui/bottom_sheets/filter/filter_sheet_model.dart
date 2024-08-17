@@ -8,9 +8,12 @@ class FilterSheetModel extends FormViewModel {
   bool fullTank = false;
   bool halfTank = false;
 
+  double get minRange => 0.00;
+  double get maxRange => 1000.00;
+
   RangeValuesDataModel _currentRange = RangeValuesDataModel(
-    start: 0.3,
-    end: 0.7,
+    start: 100,
+    end: 500,
   );
 
   RangeValuesDataModel get currentRange => _currentRange;

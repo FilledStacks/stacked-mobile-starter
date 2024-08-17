@@ -1,9 +1,13 @@
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/app/app.logger.dart';
+import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/data_models/data_models.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class SearchViewModel extends BaseViewModel {
   final _logger = getLogger('SearchViewModel');
+  final _navigationService = locator<NavigationService>();
   late List<CarDataModel> _memoryList = [];
 
   SearchViewModel() {
@@ -61,5 +65,7 @@ class SearchViewModel extends BaseViewModel {
 
   void actionMoveToCarDetails({
     required CarDataModel cardData,
-  }) {}
+  }) {
+    _navigationService.navigateToListingDetailsView();
+  }
 }

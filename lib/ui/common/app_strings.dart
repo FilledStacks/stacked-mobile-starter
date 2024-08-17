@@ -91,4 +91,9 @@ class AppStrings {
   static const String ksEmailHint = "email";
   static const String ksEditPassword = "Edit Password";
   static const String ksPasswordHint = "password";
+  static const String ksReadMore = "Read More";
+  static const String ksWhatToExpect = "What to Expect";
+  static const String ksYouMightWhatToAdd = "You Might Want to Add";
+  static const String ksRentACar = "Rent a Car";
+  static const String ksSeeAllReviews = "See All Reviews";
 }

@@ -4,6 +4,7 @@ import 'package:stacked_mobile_starter/app/app.bottomsheets.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/ui/common/app_themes.dart';
+import 'package:stacked_mobile_starter/ui/common/context_util.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
@@ -25,15 +26,18 @@ class MainApp extends StatelessWidget {
       lightTheme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
       builder: (context, lightTheme, darkTheme, themeMode) {
-        return MaterialApp(
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          themeMode: themeMode,
-          onGenerateRoute: StackedRouter().onGenerateRoute,
-          navigatorKey: StackedService.navigatorKey,
-          navigatorObservers: [
-            StackedService.routeObserver,
-          ],
+        return GestureDetector(
+          onTap: () => ContextUtils.hideKeyboard(context),
+          child: MaterialApp(
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            themeMode: themeMode,
+            onGenerateRoute: StackedRouter().onGenerateRoute,
+            navigatorKey: StackedService.navigatorKey,
+            navigatorObservers: [
+              StackedService.routeObserver,
+            ],
+          ),
         );
       },
     );

@@ -135,6 +135,8 @@ class FilterSheet extends StackedView<FilterSheetModel> with $FilterSheet {
                   height: 16,
                 ),
                 RangeSlider(
+                  min: viewModel.minRange,
+                  max: viewModel.maxRange,
                   values: RangeValues(
                     viewModel.currentRange.start,
                     viewModel.currentRange.end,

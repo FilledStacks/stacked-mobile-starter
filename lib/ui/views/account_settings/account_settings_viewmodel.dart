@@ -9,18 +9,21 @@ class AccountSettingsViewModel extends BaseViewModel {
   void showAccountNameBottomSheet() {
     _bottomSheetService.showCustomSheet(
       variant: BottomSheetType.editAccountName,
+      isScrollControlled: true,
     );
   }
 
   void showEmailBottomSheet() {
     _bottomSheetService.showCustomSheet(
       variant: BottomSheetType.editEmail,
+      isScrollControlled: true,
     );
   }
 
   void showPasswordBottomSheet() {
     _bottomSheetService.showCustomSheet(
       variant: BottomSheetType.editPassword,
+      isScrollControlled: true,
     );
   }
 }

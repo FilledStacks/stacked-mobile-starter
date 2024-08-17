@@ -31,7 +31,10 @@ class EditAccountNameSheet extends StackedView<EditAccountNameSheetModel>
     EditAccountNameSheetModel viewModel,
     Widget? child,
   ) {
+    var queryData = MediaQuery.of(context);
+    var bottomSafeArea = queryData.padding.bottom;
     return Container(
+      height: 500,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 16,
@@ -119,8 +122,8 @@ class EditAccountNameSheet extends StackedView<EditAccountNameSheetModel>
               completer!(SheetResponse());
             },
           ),
-          const SizedBox(
-            height: 24,
+          SizedBox(
+            height: (24 + bottomSafeArea),
           ),
         ],
       ),
