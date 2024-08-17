@@ -36,6 +36,11 @@ class AppTextStyles {
     fontSize: 18,
   );
 
+  static TextStyle ktsSubleSemiBold = const TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
+  );
+
   static TextStyle ktsSmall = const TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 14,

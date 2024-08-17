@@ -30,27 +30,11 @@ class HomeView extends StackedView<HomeViewModel> {
             padding: const EdgeInsets.only(
               right: 16,
             ),
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: context.palette.primaryButtonColor,
-              ),
-              child: Material(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(96),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(96),
-                  onTap: viewModel.actionApplyFilter,
-                  child: Icon(
-                    Icons.tune,
-                    color: context.palette.primaryButtonTextColor,
-                  ),
-                ),
-              ),
+            child: CustomIconButton(
+              icon: Icons.tune,
+              onTap: viewModel.actionApplyFilter,
             ),
-          ),
+          )
         ],
       ),
       body: Column(

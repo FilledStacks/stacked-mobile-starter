@@ -10,6 +10,8 @@ import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_mobile_starter/ui/views/account_settings/account_settings_view.dart'
     as _i12;
 import 'package:stacked_mobile_starter/ui/views/home/home_view.dart' as _i9;
+import 'package:stacked_mobile_starter/ui/views/listing_details/listing_details_view.dart'
+    as _i14;
 import 'package:stacked_mobile_starter/ui/views/login/login_view.dart' as _i5;
 import 'package:stacked_mobile_starter/ui/views/login_email/login_email_view.dart'
     as _i4;
@@ -29,7 +31,7 @@ import 'package:stacked_mobile_starter/ui/views/verify_mobile/verify_mobile_view
     as _i7;
 import 'package:stacked_mobile_starter/ui/views/wrapper/wrapper_view.dart'
     as _i8;
-import 'package:stacked_services/stacked_services.dart' as _i14;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const startupView = '/';
@@ -56,6 +58,8 @@ class Routes {
 
   static const notificationSettingsView = '/notification-settings-view';
 
+  static const listingDetailsView = '/listing-details-view';
+
   static const all = <String>{
     startupView,
     onboardingView,
@@ -69,6 +73,7 @@ class Routes {
     profileView,
     accountSettingsView,
     notificationSettingsView,
+    listingDetailsView,
   };
 }
 
@@ -121,6 +126,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.notificationSettingsView,
       page: _i13.NotificationSettingsView,
+    ),
+    _i1.RouteDef(
+      Routes.listingDetailsView,
+      page: _i14.ListingDetailsView,
     ),
   ];
 
@@ -197,6 +206,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i14.ListingDetailsView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i14.ListingDetailsView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -206,7 +221,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -375,6 +390,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToListingDetailsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.listingDetailsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -537,6 +566,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.notificationSettingsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithListingDetailsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.listingDetailsView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

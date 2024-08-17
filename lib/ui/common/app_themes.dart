@@ -36,6 +36,13 @@ class AppThemes {
       inactiveTrackColor: AppColors.kcSlate100,
       thumbColor: Colors.white,
     ),
+    chipTheme: ChipThemeData(
+      backgroundColor: AppColors.kcSlate100,
+      side: BorderSide.none,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(200),
+      ),
+    ),
     extensions: [
       Palette(
         textColor: Colors.black,
@@ -87,6 +94,13 @@ class AppThemes {
       activeTrackColor: Colors.white,
       inactiveTrackColor: AppColors.kcZinc700,
       thumbColor: Colors.white,
+    ),
+    chipTheme: ChipThemeData(
+      backgroundColor: AppColors.kcZinc800,
+      side: BorderSide.none,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(200),
+      ),
     ),
     extensions: [
       Palette(

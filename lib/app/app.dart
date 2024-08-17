@@ -22,6 +22,7 @@ import 'package:stacked_mobile_starter/ui/bottom_sheets/filter/filter_sheet.dart
 import 'package:stacked_mobile_starter/ui/bottom_sheets/edit_account_name/edit_account_name_sheet.dart';
 import 'package:stacked_mobile_starter/ui/bottom_sheets/edit_email/edit_email_sheet.dart';
 import 'package:stacked_mobile_starter/ui/bottom_sheets/edit_password/edit_password_sheet.dart';
+import 'package:stacked_mobile_starter/ui/views/listing_details/listing_details_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -41,6 +42,7 @@ import 'package:stacked_mobile_starter/ui/bottom_sheets/edit_password/edit_passw
     AdaptiveRoute(page: ProfileView),
     AdaptiveRoute(page: AccountSettingsView),
     AdaptiveRoute(page: NotificationSettingsView),
+    AdaptiveRoute(page: ListingDetailsView),
 // @stacked-route
   ],
   dependencies: [

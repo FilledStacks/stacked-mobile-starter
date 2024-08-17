@@ -30,7 +30,10 @@ class EditPasswordSheet extends StackedView<EditPasswordSheetModel>
     EditPasswordSheetModel viewModel,
     Widget? child,
   ) {
+    var queryData = MediaQuery.of(context);
+    var bottomSafeArea = queryData.padding.bottom;
     return Container(
+      height: 400,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 16,
@@ -95,8 +98,8 @@ class EditPasswordSheet extends StackedView<EditPasswordSheetModel>
               completer!(SheetResponse());
             },
           ),
-          const SizedBox(
-            height: 24,
+          SizedBox(
+            height: (24 + bottomSafeArea),
           ),
         ],
       ),

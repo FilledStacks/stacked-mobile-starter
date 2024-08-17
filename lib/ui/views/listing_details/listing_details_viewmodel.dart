@@ -1,13 +1,39 @@
 import 'package:stacked/stacked.dart';
-import 'package:stacked_mobile_starter/app/app.bottomsheets.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
-import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/data_models/data_models.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
-class HomeViewModel extends IndexTrackingViewModel {
-  final _bottomSheetService = locator<BottomSheetService>();
+class ListingDetailsViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _themeService = locator<ThemeService>();
+
+  bool get isDarkMode => _themeService.isDarkMode;
+
+  bool addTransportationCard = false;
+  bool addPortableWifi = false;
+
+  void actionBack() {
+    _navigationService.back();
+  }
+
+  void actionLike() {}
+
+  void actionReadMore() {}
+
+  void actionMore() {}
+
+  void actionToggleTransportationCard(bool? value) {
+    if (value == null) return;
+    addTransportationCard = value;
+    rebuildUi();
+  }
+
+  void actionTogglePortableWifi(bool? value) {
+    if (value == null) return;
+    addPortableWifi = value;
+    rebuildUi();
+  }
 
   List<CarDataModel> carList = [
     const CarDataModel(
@@ -40,46 +66,9 @@ class HomeViewModel extends IndexTrackingViewModel {
     ),
   ];
 
-  List<BrandDataModel> brandList = [
-    const BrandDataModel(
-      image: 'assets/png/vehicle_one.png',
-      name: 'Audi',
-    ),
-    const BrandDataModel(
-      image: 'assets/png/vehicle_two.png',
-      name: 'BMV',
-    ),
-    const BrandDataModel(
-      image: 'assets/png/vehicle_three.png',
-      name: 'Buick',
-    ),
-    const BrandDataModel(
-      image: 'assets/png/vehicle_four.png',
-      name: 'Toyota',
-    ),
-  ];
+  void actionSeeAllCarRentals() {}
 
-  List<String> filters = [
-    'All',
-    'Featured',
-    'Nearby',
-    'Available',
-  ];
+  void actionDone() {}
 
-  void actionSeeAllFeaturedCars() {}
-
-  void actionSeeAllBrands() {}
-
-  void actionMoveToCarDetails({
-    required CarDataModel carData,
-  }) {
-    _navigationService.navigateToListingDetailsView();
-  }
-
-  void actionApplyFilter() {
-    _bottomSheetService.showCustomSheet(
-      variant: BottomSheetType.filter,
-      isScrollControlled: true,
-    );
-  }
+  void actionSeeAllReviews() {}
 }

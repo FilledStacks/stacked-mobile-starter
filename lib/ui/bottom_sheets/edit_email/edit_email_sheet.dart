@@ -30,7 +30,10 @@ class EditEmailSheet extends StackedView<EditEmailSheetModel>
     EditEmailSheetModel viewModel,
     Widget? child,
   ) {
+    var queryData = MediaQuery.of(context);
+    var bottomSafeArea = queryData.padding.bottom;
     return Container(
+      height: 400,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 16,
@@ -95,8 +98,8 @@ class EditEmailSheet extends StackedView<EditEmailSheetModel>
               completer!(SheetResponse());
             },
           ),
-          const SizedBox(
-            height: 24,
+          SizedBox(
+            height: (24 + bottomSafeArea),
           ),
         ],
       ),
