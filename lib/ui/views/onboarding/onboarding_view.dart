@@ -16,6 +16,7 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
     OnboardingViewModel viewModel,
     Widget? child,
   ) {
+    final brightness = Theme.of(context).brightness;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -32,10 +33,9 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                 },
                 itemBuilder: (context, index) {
                   final item = viewModel.onboardItems.elementAt(index);
-                  final isDarkMode = viewModel.isDarkMode;
                   return Builder(
                     builder: (context) {
-                      if (isDarkMode) {
+                      if (brightness == Brightness.dark) {
                         return Image.asset(
                           item.imageDark ?? '',
                           height: 314,

@@ -4,6 +4,7 @@ import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
+import 'package:stacked_mobile_starter/utilities/utilities.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'edit_email_sheet.form.dart';
@@ -11,7 +12,10 @@ import 'edit_email_sheet_model.dart';
 
 @FormView(
   fields: [
-    FormTextField(name: 'email'),
+    FormTextField(
+      name: 'email',
+      validator: Validator.validateEmail,
+    ),
   ],
 )
 class EditEmailSheet extends StackedView<EditEmailSheetModel>

@@ -6,6 +6,8 @@ import 'package:stacked_services/stacked_services.dart';
 class LoginViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
 
+  bool obscureText = true;
+
   void actionLoginWithFacebook() {}
 
   void actionLoginWithGoogle() {}

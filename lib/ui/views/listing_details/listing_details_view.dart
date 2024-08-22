@@ -202,8 +202,8 @@ class ListingDetailsView extends StackedView<ListingDetailsViewModel> {
                   const SizedBox(
                     height: 24,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 16,
                     ),
                     child: ExpectCard(
@@ -212,14 +212,13 @@ class ListingDetailsView extends StackedView<ListingDetailsViewModel> {
                       title: 'Get Sunlight Exposure',
                       subtitle:
                           'Get your sunblocks ready as you will be walking with 40 degree temperature outside.',
-                      isDarkMode: viewModel.isDarkMode,
                     ),
                   ),
                   const SizedBox(
                     height: 24,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 16,
                     ),
                     child: ExpectCard(
@@ -228,14 +227,13 @@ class ListingDetailsView extends StackedView<ListingDetailsViewModel> {
                       title: 'Public Transportation',
                       subtitle:
                           'No Uber, just public transportation. Be ready to get in contact with lots of people.',
-                      isDarkMode: viewModel.isDarkMode,
                     ),
                   ),
                   const SizedBox(
                     height: 24,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 16,
                     ),
                     child: ExpectCard(
@@ -244,7 +242,6 @@ class ListingDetailsView extends StackedView<ListingDetailsViewModel> {
                       title: 'Weak Wifi Signals',
                       subtitle:
                           'There are some places with strong signal, but you’ll be off-grid most of the time.',
-                      isDarkMode: viewModel.isDarkMode,
                     ),
                   ),
                   const SizedBox(

@@ -96,4 +96,11 @@ class AppStrings {
   static const String ksYouMightWhatToAdd = "You Might Want to Add";
   static const String ksRentACar = "Rent a Car";
   static const String ksSeeAllReviews = "See All Reviews";
+  static const String ksEmailCannotBeEmpty = "Email cannot be empty";
+  static const String ksEmailNotValid = "Email address is not valid";
+  static const String ksPasswordCannotBeEmpty = "Password cannot be empty";
+  static const String ksPasswordMustBeGreaterThanFour =
+      "Password must be greater than four";
+  static const String ksFirstNameCannotBeEmpty = "First name cannot be empty";
+  static const String ksLastNameCannotBeEmpty = "Last name cannot be empty";
 }

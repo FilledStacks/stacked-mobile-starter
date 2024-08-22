@@ -4,6 +4,7 @@ import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
+import 'package:stacked_mobile_starter/utilities/utilities.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'edit_password_sheet.form.dart';
@@ -11,7 +12,10 @@ import 'edit_password_sheet_model.dart';
 
 @FormView(
   fields: [
-    FormTextField(name: 'password'),
+    FormTextField(
+      name: 'password',
+      validator: Validator.validatePassword,
+    ),
   ],
 )
 class EditPasswordSheet extends StackedView<EditPasswordSheetModel>
@@ -86,6 +90,7 @@ class EditPasswordSheet extends StackedView<EditPasswordSheetModel>
                 InputField(
                   controller: passwordController,
                   focusNode: passwordFocusNode,
+                  obscureText: viewModel.obscureText,
                   keyboardType: TextInputType.visiblePassword,
                   hint: AppStrings.ksPasswordHint,
                 ),

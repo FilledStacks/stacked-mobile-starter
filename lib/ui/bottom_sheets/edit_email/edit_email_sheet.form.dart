@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/utilities/validator.dart';
 
 const bool _autoTextFieldValidation = true;
 
@@ -19,7 +20,7 @@ final Map<String, TextEditingController> _EditEmailSheetTextEditingControllers =
 final Map<String, FocusNode> _EditEmailSheetFocusNodes = {};
 
 final Map<String, String? Function(String?)?> _EditEmailSheetTextValidations = {
-  EmailValueKey: null,
+  EmailValueKey: Validator.validateEmail,
 };
 
 mixin $EditEmailSheet {

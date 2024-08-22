@@ -4,6 +4,7 @@ import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
+import 'package:stacked_mobile_starter/utilities/utilities.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'edit_account_name_sheet.form.dart';
@@ -11,8 +12,14 @@ import 'edit_account_name_sheet_model.dart';
 
 @FormView(
   fields: [
-    FormTextField(name: 'first_name'),
-    FormTextField(name: 'last_name'),
+    FormTextField(
+      name: 'first_name',
+      validator: Validator.validateFirstName,
+    ),
+    FormTextField(
+      name: 'last_name',
+      validator: Validator.validateLastName,
+    ),
   ],
 )
 class EditAccountNameSheet extends StackedView<EditAccountNameSheetModel>
@@ -90,7 +97,7 @@ class EditAccountNameSheet extends StackedView<EditAccountNameSheetModel>
                   keyboardType: TextInputType.text,
                   hint: AppStrings.ksFirstNameHint,
                   onFieldSubmitted: (value) {
-                    if (value.isNotEmpty) {
+                    if (StringUtil.isNotEmpty(value)) {
                       lastNameFocusNode.requestFocus();
                     }
                   },
