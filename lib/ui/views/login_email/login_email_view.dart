@@ -5,6 +5,7 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_mobile_starter/extensions/context_extension.dart';
 import 'package:stacked_mobile_starter/ui/common/common.dart';
 import 'package:stacked_mobile_starter/ui/widgets/widgets.dart';
+import 'package:stacked_mobile_starter/utilities/utilities.dart';
 
 import 'login_email_view.form.dart';
 import 'login_email_viewmodel.dart';
@@ -13,6 +14,7 @@ import 'login_email_viewmodel.dart';
   fields: [
     FormTextField(
       name: 'email',
+      validator: Validator.validateEmail,
     ),
   ],
 )

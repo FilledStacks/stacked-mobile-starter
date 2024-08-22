@@ -5,15 +5,12 @@ import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/data_models/onboard_data_model.dart';
 import 'package:stacked_mobile_starter/ui/common/app_strings.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:stacked_themes/stacked_themes.dart';
 
 class OnboardingViewModel extends IndexTrackingViewModel {
-  final _themeService = locator<ThemeService>();
   final _navigationService = locator<NavigationService>();
 
   late OnboardDataModel onboardItem;
   final pageController = PageController();
-  bool get isDarkMode => _themeService.isDarkMode;
 
   List<OnboardDataModel> onboardItems = [
     const OnboardDataModel(

@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/utilities/validator.dart';
 
 const bool _autoTextFieldValidation = true;
 
@@ -20,7 +21,7 @@ final Map<String, FocusNode> _EditPasswordSheetFocusNodes = {};
 
 final Map<String, String? Function(String?)?>
     _EditPasswordSheetTextValidations = {
-  PasswordValueKey: null,
+  PasswordValueKey: Validator.validatePassword,
 };
 
 mixin $EditPasswordSheet {

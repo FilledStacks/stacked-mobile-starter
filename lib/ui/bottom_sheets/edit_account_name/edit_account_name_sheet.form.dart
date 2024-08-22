@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_mobile_starter/utilities/validator.dart';
 
 const bool _autoTextFieldValidation = true;
 
@@ -21,8 +22,8 @@ final Map<String, FocusNode> _EditAccountNameSheetFocusNodes = {};
 
 final Map<String, String? Function(String?)?>
     _EditAccountNameSheetTextValidations = {
-  FirstNameValueKey: null,
-  LastNameValueKey: null,
+  FirstNameValueKey: Validator.validateFirstName,
+  LastNameValueKey: Validator.validateLastName,
 };
 
 mixin $EditAccountNameSheet {

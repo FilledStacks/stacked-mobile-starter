@@ -4,7 +4,7 @@ import 'package:stacked_mobile_starter/app/app.bottomsheets.dart';
 import 'package:stacked_mobile_starter/app/app.locator.dart';
 import 'package:stacked_mobile_starter/app/app.router.dart';
 import 'package:stacked_mobile_starter/ui/common/app_themes.dart';
-import 'package:stacked_mobile_starter/ui/common/context_util.dart';
+import 'package:stacked_mobile_starter/utilities/context_util.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 

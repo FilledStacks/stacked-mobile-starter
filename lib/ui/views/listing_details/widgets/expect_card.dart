@@ -8,28 +8,39 @@ class ExpectCard extends StatelessWidget {
   final String svgLightPath;
   final String title;
   final String subtitle;
-  final bool isDarkMode;
   const ExpectCard({
     super.key,
     required this.svgDarkPath,
     required this.svgLightPath,
     required this.title,
     required this.subtitle,
-    this.isDarkMode = false,
   });
 
   @override
   Widget build(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            SvgPicture.asset(
-              svgLightPath,
-              height: 24,
-              width: 24,
-              color: context.palette.iconColor,
+            Builder(
+              builder: (context) {
+                if (brightness == Brightness.dark) {
+                  return SvgPicture.asset(
+                    svgLightPath,
+                    height: 24,
+                    width: 24,
+                  );
+                }
+
+                return SvgPicture.asset(
+                  svgDarkPath,
+                  height: 24,
+                  width: 24,
+                );
+              },
             ),
             const SizedBox(
               width: 16,
